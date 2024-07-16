@@ -12,31 +12,22 @@ using TMPro;
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Wave Settings")]
-    [Tooltip("A list of Wave scriptable Objects that have a list of enemies to spawn")]
-    private List<Waves> _Waves;
-
-    [Tooltip("The time between enemies spawning")]
+    [Tooltip("An EnemyWavesList scriptable Object that contains a list of enemies to spawn in each wave.")]
     [SerializeField]
-    [Min(1f)]
-    private float _TimeBetweenSpawns;
-
-    [Header("Game Object References")]
-    [SerializeField, Tooltip("One possible spawn point for enemies")]
-    private Transform _SpawnPoint1;
+    private EnemyWavesList _WavesList;
 
 
-    private int _CurrentWave;
-
-    private int _CurrentWaveInfo = 0;
+    private int _CurrentWaveIndex;
 
     private Transform _SpawnedEnemiesParent;
 
 
     private void Awake()
     {
-        _Waves = Resources.LoadAll<Waves>("").ToList();
-        _CurrentWave = 0;
-        _SpawnedEnemiesParent = GameObject.Find("Spawned Enemies Parent").transform;
+        _CurrentWaveIndex = -1;
+
+        //_SpawnedEnemiesParent = GameObject.Find("Spawned Enemies Parent").transform;
+        _SpawnedEnemiesParent = this.transform;
     }
 
     // Start is called before the first frame update
@@ -47,29 +38,34 @@ public class EnemySpawner : MonoBehaviour
 
     public void StartNextWave()
     {
-        StartCoroutine(Spawn(_CurrentWave++));
+        StartCoroutine(Spawn(_CurrentWaveIndex));
     }
     public void StopSpawner()
     {
-        StartCoroutine(Spawn(_CurrentWave));
+        StartCoroutine(Spawn(_CurrentWaveIndex));
     }
     IEnumerator Spawn(int currentWave)
     {
+        _CurrentWaveIndex++;
+
+        yield return new WaitForSeconds(_WavesList[_CurrentWaveIndex].StartDelay);
+
+
         int currentEnemyType = 0;
-        EnemyTypes type = _Waves[0].WaveInfo[_CurrentWaveInfo].Enemies[currentEnemyType].Enemy.Type;
-        int enemiesOfCurrentType = _Waves[_CurrentWaveInfo].WaveInfo[currentWave].Enemies[currentEnemyType].amount;
+        EnemyTypes type = _WavesList[_CurrentWaveIndex].Enemies[currentEnemyType].EnemyInfo.Type;
+        int enemiesOfCurrentType = _WavesList[_CurrentWaveIndex].Enemies[currentEnemyType].NumberToSpawn;
         int totalEnemies = EnemiesInCurrentWave();
         GameObject enemy = null;
         
         for (int i = 0; i < totalEnemies; i++)
         {
             if( enemiesOfCurrentType == 0 ) {
-                type = _Waves[_CurrentWaveInfo].WaveInfo[currentWave].Enemies[currentEnemyType].Enemy.Type;
-                enemiesOfCurrentType = _Waves[_CurrentWaveInfo].WaveInfo[currentWave].Enemies[currentEnemyType].amount;
+                type = _WavesList[_CurrentWaveIndex].Enemies[currentEnemyType].EnemyInfo.Type;
+                enemiesOfCurrentType = _WavesList[_CurrentWaveIndex].Enemies[currentEnemyType].NumberToSpawn;
             }
 
-            enemy = Instantiate(_Waves[_CurrentWaveInfo].WaveInfo[currentWave].Enemies[currentEnemyType].Enemy.Prefab, _SpawnedEnemiesParent);
-            float delayBetween = _Waves[_CurrentWaveInfo].WaveInfo[currentWave].Enemies[currentEnemyType].timeBetween;
+            enemy = Instantiate(_WavesList[_CurrentWaveIndex].Enemies[currentEnemyType].EnemyInfo.Prefab, _SpawnedEnemiesParent);
+            float delayBetween = _WavesList[_CurrentWaveIndex].Enemies[currentEnemyType].TimeBetweenSpawns;
 
 
             enemiesOfCurrentType--;
@@ -86,20 +82,20 @@ public class EnemySpawner : MonoBehaviour
 
     public int EnemiesInCurrentWave()
     {
-        Wave current = _Waves[_CurrentWaveInfo].WaveInfo[_CurrentWave - 1];
+        EnemyWaveInfo current = _WavesList[_CurrentWaveIndex];
         int tally = 0;
-        foreach(SpawnInfo enemy in current.Enemies)
+        foreach(EnemySpawnInfo enemy in current.Enemies)
         {
-            tally += enemy.amount;
+            tally += enemy.NumberToSpawn;
         }
         return tally;
     }
 
     public int WaveReward()
     {
-        Wave current = _Waves[_CurrentWaveInfo].WaveInfo[_CurrentWave - 1];
-        return current.WaveReward;
+        EnemyWaveInfo currentWave = _WavesList.Waves[_CurrentWaveIndex];
+        return currentWave.WaveReward;
     }
 
-    public int NumberOfWaves { get { return _Waves.Count; } }
+    public int NumberOfWaves { get { return _WavesList.Count; } }
 }

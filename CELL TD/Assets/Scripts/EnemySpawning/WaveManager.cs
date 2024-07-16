@@ -22,8 +22,8 @@ public class WaveManager : MonoBehaviour
 
     public static WaveManager Instance;
 
-    private int _TotalWavesInLevel = 10; //TODO: Change Later
-    private int _WaveReward = 0;
+    private int _TotalWavesInLevel;
+    private int _WaveReward;
 
     private List<EnemySpawner> _EnemySpawners;
     private int _TotalEnemiesInWave;
@@ -66,19 +66,16 @@ public class WaveManager : MonoBehaviour
         Enemy_Base.OnEnemyReachedGoal += OnEnemyReachedGoal;
 
         _EnemySpawners = new List<EnemySpawner>();
-        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Enemy Spawner");
+        EnemySpawner[] spawners = FindObjectsOfType<EnemySpawner>();
 
-        foreach(GameObject spawner in spawners)
+        foreach(EnemySpawner spawner in spawners)
         {
-            EnemySpawner enemySpawner = spawner.GetComponent<EnemySpawner>();
-            if(spawner.GetComponent<EnemySpawner>().NumberOfWaves > _TotalWavesInLevel)
+            if(spawner.NumberOfWaves > _TotalWavesInLevel)
             {
-                //_TotalWavesInLevel = spawner.GetComponent<EnemySpawner>().NumberOfWaves;
                 _EnemySpawners.Add(spawner.GetComponent<EnemySpawner>());
-            }
-            else
-            {
-                Debug.LogError($"Enemy spawner object \"{spawner.name}\" does not have an EnemySpawner component on it!");
+
+                if (spawner.NumberOfWaves > _TotalWavesInLevel)
+                    _TotalWavesInLevel = spawner.NumberOfWaves;
             }
         }
 
