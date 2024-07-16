@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2329030b78a8a74089458c7a895ef80, type: 3}
+  m_Name: TowerInfo_Lymphocyte_SlowingAOETower
+  m_EditorClassIdentifier: 
+  DisplayName: Lymphocyte (Slowing AOE Tower)
+  Description: Slows down enemies within the range of the tower. This is a bunch
+    of test text to test the UI in this test scenario in a test scene in your dreams.
+  TowerType: 0
+  DisplayIcon: {fileID: 21300000, guid: 89f7a1170652cb44094be18cc8eabea9, type: 3}
+  Prefab: {fileID: 4332558166208827867, guid: 7e288c9bc752a9047b3f9fa96b1590e2, type: 3}
+  TargetingType: 0
+  TargetedEnemyTypes: 00000000
+  BuildCost: 250
+  BaseRefundPercentage: 0.5
+  BaseMaxHealth: 100
+  BaseDamageValue: 0
+  BaseFireRate: 1
+  BaseRange: 5
+  BaseNumberOfTargets: 0
+  LevelUpDefinitions:
+  - UpgradeCost: 150
+    StatUpgradeDefinitions:
+    - TowerStat: 10
+      UpgradeAmount: 1
+  - UpgradeCost: 200
+    StatUpgradeDefinitions:
+    - TowerStat: 10
+      UpgradeAmount: 1
+  - UpgradeCost: 350
+    StatUpgradeDefinitions:
+    - TowerStat: 10
+      UpgradeAmount: 1
+  StatusEffect: {fileID: 11400000, guid: fbc34d9540f384444a4889d9f85537db, type: 2}
+  StatusEffect1: {fileID: 11400000, guid: 39cd5f83114376348a870bff6e9b4398, type: 2}
+  StatusEffect2: {fileID: 11400000, guid: 5b3bb46a4ac788047a301460380d99d0, type: 2}
+  StatusEffect3: {fileID: 11400000, guid: 48df69a7f8cdfcd41a510b23e583867f, type: 2}

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 70e7375904aae754c8729db991c94325
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _ButtonsParent: {instanceID: 0}
+  - _TowerSelectorButtonPrefab: {instanceID: 0}
+  - _placer: {fileID: 2142549424214715536, guid: b0b151819c84c6d4298fba0769d9c21b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

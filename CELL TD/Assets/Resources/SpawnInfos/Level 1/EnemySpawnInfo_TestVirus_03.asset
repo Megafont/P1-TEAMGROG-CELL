@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8189502a17fa6c74b9d80a91d40a23b9, type: 3}
+  m_Name: EnemySpawnInfo_TestVirus_03
+  m_EditorClassIdentifier: 
+  EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
+  NumberToSpawn: 3
