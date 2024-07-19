@@ -15,6 +15,6 @@ MonoBehaviour:
   StartDelay: 0
   WaveReward: 50
   Enemies:
-  - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
+  - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
     NumberToSpawn: 10
     TimeBetweenSpawns: 2.5
