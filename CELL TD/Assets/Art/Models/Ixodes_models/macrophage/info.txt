@@ -1,0 +1,5 @@
+Also I use emmissive map like a displase map and add small random power to it, to make it breathing. It posible make by shading without any bones
+_baseColor - base diffuse color 
+_normal  - normal map 
+_emissive  - emmisive map, some time reqare multiply for better looks, depends on scine light
+_occlusionRoughnessMetallic  - rbg file content multiple texture, R chanel - ambient oclusion, G chanel -Roughnes map, B chanel - metallic map
