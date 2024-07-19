@@ -30,7 +30,7 @@ public class SoundSaver : MonoBehaviour
         }
         else
         {
-            //AudioListener.volume = Mathf.Log10(value / 100) * 20f;
+            AudioListener.volume = Mathf.Log10(value / 100) * 20f;
         }
     }
 

@@ -68,6 +68,8 @@ public class Virus_Base : Enemy_Base, IVirus
 
     protected new void OnTriggerEnter(Collider other)
     {
+        base.OnTriggerEnter(other);
+
         if (!_PlayerUnitsInRange.Contains(other.gameObject) &&
             other.gameObject.layer == LayerMask.NameToLayer("Player Units"))
         {
