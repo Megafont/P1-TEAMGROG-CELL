@@ -26,7 +26,7 @@ public class Enemy_Base : MonoBehaviour, IEnemy
 
 
     [Tooltip("This enemy's stats information")]
-    [SerializeField] protected EnemyInfo_Base _EnemyInfo;
+    [SerializeField] private EnemyInfo_Base _EnemyInfo;
    
 
     protected NavMeshAgent _NavMeshAgent;
@@ -160,7 +160,7 @@ public class Enemy_Base : MonoBehaviour, IEnemy
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (_Health <= 0 && !_IsDead)
         {
@@ -188,6 +188,35 @@ public class Enemy_Base : MonoBehaviour, IEnemy
         {
             _DistanceFromNextWayPoint = 0f;
         }
+
+
+        if (stoppingEntities.Count > 0 || slowingEntities.Count > 0)
+        {
+            CleanEntitiesLists();
+        }
+    }
+
+    private void CleanEntitiesLists()
+    {
+        // Remove any stopping entities that are now null (meaning they have been destroyed).
+        for (int i = stoppingEntities.Count - 1; i >= 0; i--)
+        {
+            if (stoppingEntities[i] == null)
+            {
+                stoppingEntities.RemoveAt(i);
+            }
+
+        } // end for i
+
+        // Remove any slowing entities that are now null (meaning they have been destroyed).
+        for (int j = slowingEntities.Count - 1; j >= 0; j--)
+        {
+            if (slowingEntities[j] == null)
+            {
+                slowingEntities.RemoveAt(j);
+            }
+
+        } // end for i
 
     }
 
@@ -372,4 +401,6 @@ public class Enemy_Base : MonoBehaviour, IEnemy
             _NextWayPoint = value; 
         }
     }
+
+    public EnemyInfo_Base EnemyInfo { get { return _EnemyInfo; } }
 }

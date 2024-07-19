@@ -20,6 +20,6 @@ public class EnemyWaveInfo : ScriptableObject
 
 
     [Tooltip("Specifies the list of enemies that will spawn during this wave. The same enemy type can be added more than once, for example to have a second group of that enemy come in that spawns faster than the first.")]
-    public List<EnemySpawnInfo> Enemies = new List<EnemySpawnInfo>();
+    public List<EnemySpawnInfo2> Enemies = new List<EnemySpawnInfo2>();
 }
 

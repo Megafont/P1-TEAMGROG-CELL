@@ -45,4 +45,10 @@ public class Bacteria_Base : Enemy_Base, IBacteria
         // This probably isn't needed.
         //base.InitStateMachine();
     }
+
+
+    public EnemyInfo_Bacteria EnemyInfo_Bacteria
+    {
+        get { return EnemyInfo as EnemyInfo_Bacteria; }
+    }
 }

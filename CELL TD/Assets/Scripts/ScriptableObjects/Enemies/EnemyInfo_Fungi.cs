@@ -27,4 +27,5 @@ public class EnemyInfo_Fungi : EnemyInfo_Base
     {
         Type = EnemyTypes.Fungi_Base;
     }
+
 }

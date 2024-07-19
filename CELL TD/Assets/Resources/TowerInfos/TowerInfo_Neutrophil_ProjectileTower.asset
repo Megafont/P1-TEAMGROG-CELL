@@ -15,7 +15,7 @@ MonoBehaviour:
   DisplayName: Neutrophil (Projectile Tower)
   Description: Fires projectile attacks at the approaching enemies.
   TowerType: 2
-  DisplayIcon: {fileID: 21300000, guid: f0d141de644b72c4baac686ac6e4a2ed, type: 3}
+  DisplayIcon: {fileID: 21300000, guid: ba0c65a50334c584fbe487b38c74b24a, type: 3}
   Prefab: {fileID: 5880325033198506782, guid: 1dbbb514d98788a4db9001999afe0718, type: 3}
   TargetingType: 1
   TargetedEnemyTypes: 
