@@ -69,6 +69,7 @@ public class Placer : MonoBehaviour
                     Destroy(gameObject);
                     return;
                 }
+
                 GameManager.Instance.MoneySystem.SubtractCurrency((int)info.BuildCost);
                 PlaceTower();
             }

@@ -166,7 +166,7 @@ public class Tower_Base : MonoBehaviour
 
 
         // Tell state machine to write in the debug console every time it exits or enters a state.
-        _stateMachine.EnableDebugLogging = true;
+        //_stateMachine.EnableDebugLogging = true;
 
         // Set the starting state.
         _stateMachine.SetState(idleState);
