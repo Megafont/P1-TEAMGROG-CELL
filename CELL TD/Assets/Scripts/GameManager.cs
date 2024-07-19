@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
         GameState_PauseMenu pauseMenuState = new GameState_PauseMenu(this);
         GameState_LevelSelect levelSelectState = new GameState_LevelSelect(this);
         GameState_Settings settingsState = new GameState_Settings(this);
+        GameState_Credits creditsState = new GameState_Credits(this);
 
         // Manually register startup/menu states so they can be triggered via GameManager.SetGameState().
         // If we don't do this, the state machine will not know about any states that aren't referenced
@@ -69,7 +70,8 @@ public class GameManager : MonoBehaviour
                                 mainMenuState,
                                 pauseMenuState,
                                 levelSelectState,
-                                settingsState);
+                                settingsState,
+                                creditsState);
 
         // Create in-game states
         GameState_InGame inGameState = new GameState_InGame(this);
@@ -157,7 +159,11 @@ public class GameManager : MonoBehaviour
 
             case "LevelSelector":
                 SetGameState(typeof(GameState_LevelSelect));
-                return;            
+                return;
+
+            case "Credits":
+                SetGameState(typeof(GameState_Credits));
+                return;
         }
 
 

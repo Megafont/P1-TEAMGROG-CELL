@@ -28,4 +28,5 @@ public class EnemyInfo_Bacteria : EnemyInfo_Base
     {
         Type = EnemyTypes.Bacteria_Base;
     }
+
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: Slows down enemies within the range of the tower. This is a bunch
     of test text to test the UI in this test scenario in a test scene in your dreams.
   TowerType: 0
-  DisplayIcon: {fileID: 21300000, guid: 89f7a1170652cb44094be18cc8eabea9, type: 3}
+  DisplayIcon: {fileID: 21300000, guid: 6bec65e9aa145594e8ed37ef796ae34f, type: 3}
   Prefab: {fileID: 4332558166208827867, guid: 7e288c9bc752a9047b3f9fa96b1590e2, type: 3}
   TargetingType: 0
   TargetedEnemyTypes: 00000000

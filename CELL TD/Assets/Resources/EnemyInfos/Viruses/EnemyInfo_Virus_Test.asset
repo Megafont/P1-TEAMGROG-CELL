@@ -24,4 +24,6 @@ MonoBehaviour:
   RewardAmount: 20
   WayPointArrivedDistance: 0.3
   CurrencyGain: 4
-  OffspringPerCellBurst: 4
+  ChanceOfConversion: 0.25
+  ConversionRadius: 2
+  VirusPrefab: {fileID: 3464540451601869577, guid: 83758de0693e03f469449ceed479825f, type: 3}

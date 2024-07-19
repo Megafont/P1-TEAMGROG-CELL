@@ -15,8 +15,17 @@ public class EnemyInfo_Virus : EnemyInfo_Base
     [Header("Virus-Specific Stats")]
 
     // Add properties specific to and shared by all virus-type enemies only.
-    [Min(0)]
-    public int OffspringPerCellBurst = 4; // A possible setting for how many viruses are emitted when an infected cell bursts. The header causes an error if there are no properties here.
+    [Tooltip("This sets how likely it is that a virus will convert a player unit into another virus.")]
+    [Range(0f, 1f)]
+    public float ChanceOfConversion = 0.25f;
+
+    [Tooltip("How close the player unit must be to the virus for the virus to be able to convert it.")]
+    [Min(0f)]
+    public float ConversionRadius = 1f;
+
+    [Tooltip("The virus prefab to use for spawning more viruses when a player unit is converted.")]
+    public Transform VirusPrefab;
+
 
 
     /// <summary>

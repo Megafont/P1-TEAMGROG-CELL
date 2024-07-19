@@ -118,6 +118,7 @@ public class TowerSelectorPanel : MonoBehaviour
                 }
                 Destroy(newPlacer);
             }
+
             newPlacer = Instantiate(_placer);
             newPlacer.GetComponent<Placer>().tower = button.TowerPrefab;
             newPlacer.GetComponent<Placer>().info = button.TowerInfo;

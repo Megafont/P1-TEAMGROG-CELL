@@ -10,7 +10,6 @@ using UnityEngine;
 /// 
 public class BossSpawner_Base : Enemy_Base    
 {
-    private EnemyInfo_BossSpawner _infoRef;
     private Vector3 _startPos;
 
     new void Awake()
@@ -21,7 +20,6 @@ public class BossSpawner_Base : Enemy_Base
     new void Start()
     {
         base.Start();
-        _infoRef = (EnemyInfo_BossSpawner)_EnemyInfo;
         _startPos = transform.position;
         InvokeRepeating("SpawnEnemy", 2.0f, 2.0f);
         // Do initialization here.
@@ -29,7 +27,7 @@ public class BossSpawner_Base : Enemy_Base
 
     void SpawnEnemy()
     {
-        GameObject newEnemy = Instantiate(_infoRef.spawnableEnemies[Random.Range(0,_infoRef.spawnableEnemies.Length)]);
+        GameObject newEnemy = Instantiate(EnemyInfo_BossSpawner.spawnableEnemies[Random.Range(0,EnemyInfo_BossSpawner.spawnableEnemies.Length)]);
         newEnemy.transform.position = _startPos;
         WaveManager.Instance.EnemyAdded();
     }
@@ -47,5 +45,11 @@ public class BossSpawner_Base : Enemy_Base
     {
         // This probably isn't needed.
         //base.InitStateMachine();
+    }
+
+
+    public EnemyInfo_BossSpawner EnemyInfo_BossSpawner
+    {
+        get { return EnemyInfo as EnemyInfo_BossSpawner; }
     }
 }

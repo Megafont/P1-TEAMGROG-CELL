@@ -9,7 +9,6 @@ using UnityEngine;
 /// </summary>
 public class Fungi_Base : Enemy_Base, IFungi
 {
-    private EnemyInfo_Fungi _infoRef;
     [SerializeField]
     private GameObject _sporeEnemy;
     new void Awake()
@@ -23,14 +22,13 @@ public class Fungi_Base : Enemy_Base, IFungi
     new void Start()
     {
         base.Start();
-        _infoRef = (EnemyInfo_Fungi)_EnemyInfo;
 
         // Do initialization here.
     }
 
     protected override void KillEnemy(int type)
     {
-        for (int i = 0; i < _infoRef.SporesPerBurst; i++)
+        for (int i = 0; i < EnemyInfo_Fungi.SporesPerBurst; i++)
         {
             var newEnemy = Instantiate(_sporeEnemy);
             newEnemy.transform.position = new Vector3(transform.position.x+Random.Range(-1.0f,1.0f), transform.position.y, transform.position.z + Random.Range(-1.0f, 1.0f));
@@ -61,5 +59,11 @@ public class Fungi_Base : Enemy_Base, IFungi
     {
         // This probably isn't needed.
         //base.InitStateMachine();
+    }
+
+
+    public EnemyInfo_Fungi EnemyInfo_Fungi
+    {
+        get { return EnemyInfo as EnemyInfo_Fungi; }
     }
 }

@@ -84,7 +84,7 @@ public class EnemySpawner : MonoBehaviour
     {
         EnemyWaveInfo current = _WavesList[_CurrentWaveIndex];
         int tally = 0;
-        foreach(EnemySpawnInfo enemy in current.Enemies)
+        foreach(EnemySpawnInfo2 enemy in current.Enemies)
         {
             tally += enemy.NumberToSpawn;
         }
