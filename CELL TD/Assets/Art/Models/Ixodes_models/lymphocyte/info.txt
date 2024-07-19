@@ -1,0 +1,6 @@
+Tower model require two materials. For top shader use 2 sided material and maybe play with parameters to better look. 
+I upload 8 texture, 4 for each material:
+_baseColor - base diffuse color and in alpha chanel transperency map if needed
+_normal  - normal map 
+_emissive  - emmisive map, some time reqare multiply for better looks, depends on scine light
+_occlusionRoughnessMetallic  - rbg file content multiple texture, R chanel - ambient oclusion, G chanel -Roughnes map, B chanel - metallic map
