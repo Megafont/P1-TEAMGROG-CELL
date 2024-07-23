@@ -1,0 +1,4 @@
+the same shader settings with lymphocyte
+neutrophil_rig.fbx  - bones but without animation
+neutrophil_idle.fbx  -  idle animation
+neutrophil_recall.fbx  -  recall animation
