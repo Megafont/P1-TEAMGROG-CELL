@@ -27,7 +27,7 @@ public class Placer : MonoBehaviour
 
         foreach (MeshFilter sourceMeshFilter in sourceMeshFilters)
         {
-            GameObject newModel = new GameObject("part");
+            GameObject newModel = new GameObject(sourceMeshFilter.gameObject.name);
             newModel.transform.parent = transform;
 
             newModel.AddComponent<MeshFilter>();

@@ -2311,7 +2311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &866373969
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9280,6 +9280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: macrophage
       objectReference: {fileID: 0}
+    - target: {fileID: 4499180029300211948, guid: 5cc971549a4c2304bb5ff96a1d1c3e59, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8915388340891305510, guid: 5cc971549a4c2304bb5ff96a1d1c3e59, type: 3}
       propertyPath: m_LocalPosition.x
       value: -265.398
@@ -10646,6 +10650,10 @@ PrefabInstance:
     - target: {fileID: 2694946474672958398, guid: 9225029adbc8012438cfdb4248a264a9, type: 3}
       propertyPath: m_Name
       value: lymphocyte_anim
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694946474672958398, guid: 9225029adbc8012438cfdb4248a264a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6740652654202462699, guid: 9225029adbc8012438cfdb4248a264a9, type: 3}
       propertyPath: m_LocalPosition.x
