@@ -7,27 +7,17 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.UIElements;
 
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("Wave Settings")]
-    [Tooltip("An EnemyWavesList scriptable Object that contains a list of enemies to spawn in each wave.")]
-    [SerializeField]
-    private EnemyWavesList _WavesList;
+    private EnemySpawnerInfo _EnemySpawningInfo;
 
-
-    private int _CurrentWaveIndex;
-
-    private Transform _SpawnedEnemiesParent;
 
 
     private void Awake()
     {
-        _CurrentWaveIndex = -1;
-
-        //_SpawnedEnemiesParent = GameObject.Find("Spawned Enemies Parent").transform;
-        _SpawnedEnemiesParent = this.transform;
     }
 
     // Start is called before the first frame update
@@ -36,36 +26,55 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    public void StartNextWave()
+    public void StartNextWave(EnemySpawnerInfo enemySpawningInfo)
     {
-        StartCoroutine(Spawn(_CurrentWaveIndex));
+        // If we received a null value, then simply return.
+        if (enemySpawningInfo == null)
+            throw new ArgumentNullException(nameof(enemySpawningInfo));
+
+
+        _EnemySpawningInfo = enemySpawningInfo;
+
+        StartCoroutine(Spawn());
     }
     public void StopSpawner()
     {
-        StartCoroutine(Spawn(_CurrentWaveIndex));
+        StopCoroutine(Spawn());
     }
-    IEnumerator Spawn(int currentWave)
+    IEnumerator Spawn()
     {
-        _CurrentWaveIndex++;
-
-        yield return new WaitForSeconds(_WavesList[_CurrentWaveIndex].StartDelay);
+        // Wait until the initial delay expires before this spawner begins spawning.
+        yield return new WaitForSeconds(_EnemySpawningInfo.StartDelay);
 
 
         int currentEnemyType = 0;
-        EnemyTypes type = _WavesList[_CurrentWaveIndex].Enemies[currentEnemyType].EnemyInfo.Type;
-        int enemiesOfCurrentType = _WavesList[_CurrentWaveIndex].Enemies[currentEnemyType].NumberToSpawn;
+
+        int enemiesOfCurrentType = _EnemySpawningInfo.EnemySpawnGroups[currentEnemyType].NumberToSpawn;
         int totalEnemies = EnemiesInCurrentWave();
         GameObject enemy = null;
-        
+
         for (int i = 0; i < totalEnemies; i++)
         {
-            if( enemiesOfCurrentType == 0 ) {
-                type = _WavesList[_CurrentWaveIndex].Enemies[currentEnemyType].EnemyInfo.Type;
-                enemiesOfCurrentType = _WavesList[_CurrentWaveIndex].Enemies[currentEnemyType].NumberToSpawn;
+            if (_EnemySpawningInfo.EnemySpawnGroups.Count <= 0)
+            {
+                Debug.LogWarning("EnemySpawner received an EnemySpawnGroup that is set to spawn 0 enemies! To make the spawner spawn nothing in a given wave, simply set the EnemyGroupInfos list to have 0 elements for that spawner in that wave. Skipping this enemy spawn group.");
+                continue;
+            }
+            else if (_EnemySpawningInfo.EnemySpawnGroups[currentEnemyType].EnemyInfo == null)
+            {
+                Debug.LogWarning("EnemySpawner received an EnemySpawnGroup that has a null value for the enemy type! Skipping it.");
+                continue;
             }
 
-            enemy = Instantiate(_WavesList[_CurrentWaveIndex].Enemies[currentEnemyType].EnemyInfo.Prefab, _SpawnedEnemiesParent);
-            float delayBetween = _WavesList[_CurrentWaveIndex].Enemies[currentEnemyType].TimeBetweenSpawns;
+            EnemyTypes type = _EnemySpawningInfo.EnemySpawnGroups[currentEnemyType].EnemyInfo.Type;
+
+            if ( enemiesOfCurrentType == 0 ) {
+                type = _EnemySpawningInfo.EnemySpawnGroups[currentEnemyType].EnemyInfo.Type;
+                enemiesOfCurrentType = _EnemySpawningInfo.EnemySpawnGroups[currentEnemyType].NumberToSpawn;
+            }
+
+            enemy = Instantiate(_EnemySpawningInfo.EnemySpawnGroups[currentEnemyType].EnemyInfo.Prefab, transform);
+            float delayBetween = _EnemySpawningInfo.EnemySpawnGroups[currentEnemyType].TimeBetweenSpawns;
 
 
             enemiesOfCurrentType--;
@@ -81,21 +90,13 @@ public class EnemySpawner : MonoBehaviour
 
 
     public int EnemiesInCurrentWave()
-    {
-        EnemyWaveInfo current = _WavesList[_CurrentWaveIndex];
+    {       
         int tally = 0;
-        foreach(EnemySpawnInfo2 enemy in current.Enemies)
+        foreach(EnemySpawnGroupInfo group in _EnemySpawningInfo.EnemySpawnGroups)
         {
-            tally += enemy.NumberToSpawn;
+            tally += group.NumberToSpawn;
         }
         return tally;
     }
 
-    public int WaveReward()
-    {
-        EnemyWaveInfo currentWave = _WavesList.Waves[_CurrentWaveIndex];
-        return currentWave.WaveReward;
-    }
-
-    public int NumberOfWaves { get { return _WavesList.Count; } }
 }
