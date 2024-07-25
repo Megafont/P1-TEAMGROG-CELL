@@ -1,0 +1,6 @@
+background_baseColor - color
+background_occlusionRoughnessMetallic - combained RGB texture R(ambient oclusion), G(Roughness), B(metallnes)
+background_baseDisplasment  - displasment map
+background_emissive - emmisive map
+background_normal - normal map
+it will work only with light in the scene. And if for bacground use plane geometry

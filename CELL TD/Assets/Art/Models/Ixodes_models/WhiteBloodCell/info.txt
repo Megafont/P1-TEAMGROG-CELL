@@ -1,0 +1,4 @@
+The same shading, maybe try one side material, may be two sides I am not sure that looks better
+WhiteBloodCell_rig.fbx  file with geometry and bones, no animation
+WhiteBloodCell_idle.fbx  idle animation
+WhiteBloodCell_atack.fbx  ataack animation

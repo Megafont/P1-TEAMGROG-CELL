@@ -135,6 +135,66 @@ public class GameManager : MonoBehaviour
     private void OnActiveSceneChanged(Scene current, Scene next)
     {
         UpdateReferences();
+        StartCoroutine(OnSceneChangedEnableHUD());
+    }
+
+    /// <summary>
+    /// This coroutine is used to make sure the HUD is enabled when we switch to a new level.
+    /// We need to use this since called EnableHUD() directly from inside of OnActiveSceneChanged()
+    /// doesn't work since the scene is probably still loading/initializing at that point.
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator OnSceneChangedEnableHUD()
+    {
+        yield return new WaitForSeconds(0.25f);
+        EnableHUD();
+    }
+
+    /// <summary>
+    /// This function simply checks if the GameObject "GameUI" exists in this scene. 
+    /// "GameUI" is the object that contains all of the in-game HUD elements.
+    /// It enables the HUD object if it isn't already enabled.
+    /// </summary>
+    private void EnableHUD()
+    {
+        // If there is an object in the scene called "GameUI", then enable it if it is not already enabled.
+        // This object is the in-game HUD, so it will be present as long as we are in a level.
+        GameObject uiObj = FindInactiveObjectByName("GameUI");
+
+        if (uiObj != null && uiObj.activeSelf == false)
+        {
+            uiObj.SetActive(true);
+
+            // We need to call UpdateReferences to grab the MoneySystem and HealthSystem objects.
+            // This is because they will be null if the "GameUI" GameObject was disabled since
+            // they are inside of that object, which wasn't found earlier since it was disabled.
+            UpdateReferences();
+        }
+    }
+
+    /// <summary>
+    /// This function finds an inactive GameObject by its name.
+    /// We need this since GameObject.Find() can only find GameObjects that are enabled.
+    /// This function should only be called sparingly, since it iterates through all
+    /// objects in the scene. So its best used in places like Awake()/Start().
+    /// </summary>
+    /// <param name="name">The name of the GameObject to find.</param>
+    /// <returns>The GameObject that was found, or null if it was not found.</returns>
+    private GameObject FindInactiveObjectByName(string name)
+    {
+        Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+        for (int i = 0; i < objs.Length; i++)
+        {
+            if (objs[i].hideFlags == HideFlags.None)
+            {
+                if (objs[i].name == name)
+                {
+                    return objs[i].gameObject;
+                }
+            }
+        } // end for i
+
+        return null;
     }
 
     /// <summary>
@@ -145,6 +205,10 @@ public class GameManager : MonoBehaviour
         // If we are starting in scene other than the StartUp scene, then run the startup logic to make sure the game is properly initialized.
         if (SceneManager.GetActiveScene().name != "StartUp")
             StartUp.DoStartUpWork();
+
+
+        // Enable the HUD if it isn't already enabled.
+        EnableHUD();
 
 
         switch (SceneManager.GetActiveScene().name)
@@ -197,7 +261,7 @@ public class GameManager : MonoBehaviour
     {
         _StateMachine.ReturnToPreviousState(reinitializeTheState);
     }
-    
+
 
 
     public bool IsInitialized { get; private set; }
