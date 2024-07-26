@@ -372,7 +372,7 @@ public class MusicPlayer : MonoBehaviour
             // The loaded scene does not appear to be a level, so find the SceneMusicSettings object for the loaded scene.
             for (int i = 0; i < _SceneMusicSettings.Count; i++)
             {
-                if (_SceneMusicSettings[i].Scene.name == sceneName)
+                if (_SceneMusicSettings[i].SceneName == sceneName)
                 {
                     return i;
                 }
