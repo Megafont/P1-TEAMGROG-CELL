@@ -17,7 +17,7 @@ MonoBehaviour:
     of test text to test the UI in this test scenario in a test scene in your dreams.
   TowerType: 0
   DisplayIcon: {fileID: 21300000, guid: 6bec65e9aa145594e8ed37ef796ae34f, type: 3}
-  Prefab: {fileID: 2694946474672958398, guid: 9225029adbc8012438cfdb4248a264a9, type: 3}
+  Prefab: {fileID: 8034803357733610008, guid: 6e169a01941365b4aae7055c63ac17cc, type: 3}
   TargetingType: 0
   TargetedEnemyTypes: 00000000
   BuildCost: 250

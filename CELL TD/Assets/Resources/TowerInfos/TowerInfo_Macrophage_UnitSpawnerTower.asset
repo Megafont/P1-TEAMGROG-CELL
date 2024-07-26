@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: Spawns offensive units to combat the incoming enemy swarm.
   TowerType: 1
   DisplayIcon: {fileID: 21300000, guid: 415f42750426f8b42bbc0384ca05e462, type: 3}
-  Prefab: {fileID: 4499180029300211948, guid: 5cc971549a4c2304bb5ff96a1d1c3e59, type: 3}
+  Prefab: {fileID: 1841107985492918539, guid: e198d85119b04854f8153459b8c40a26, type: 3}
   TargetingType: 2
   TargetedEnemyTypes: 
   BuildCost: 350

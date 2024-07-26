@@ -15,7 +15,7 @@ MonoBehaviour:
   DisplayName: Macrophage
   Type: 0
   UiIcon: {fileID: 21300000, guid: 2427d3a17b5b2b94b959c6d0ebdd6792, type: 3}
-  Prefab: {fileID: 4808694354577833756, guid: 2eed3cd9977a85949ad2a42bcde5fe8a, type: 3}
+  Prefab: {fileID: 1129119397217508348, guid: b0e111f98130efc4c8494a2240f47db1, type: 3}
   AttackDamage: 2
   AttackSpeed: 1
   BaseMovementSpeed: 1

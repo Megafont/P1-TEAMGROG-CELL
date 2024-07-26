@@ -300,7 +300,7 @@ MonoBehaviour:
   _placementClip: {fileID: 8300000, guid: 6635e7ab72dfed043973f185cf4d1b77, type: 3}
   _audioPlayer: {fileID: 6289168155491189095}
   targets: []
-  unitPrefab: {fileID: 4808694354577833756, guid: 2eed3cd9977a85949ad2a42bcde5fe8a, type: 3}
+  unitPrefab: {fileID: 1129119397217508348, guid: b0e111f98130efc4c8494a2240f47db1, type: 3}
   maxUnits: 3
   spawnPoint: {fileID: 3273052641148002110}
   _SpawnedUnitInfo: {fileID: 11400000, guid: 13e0147f95c6d7e48a7ae08f146b6ab4, type: 2}
