@@ -236,14 +236,16 @@ public class MusicPlayer : MonoBehaviour
 
             // Fade in the audio sources playing the current scene music.
             SetMusicVolume(_SceneMusicSettings[_CurrentMusicSettingsIndex].VolumeAdjustment * percent, 
-                           _CurrentMusicAudioSources);
+                           _CurrentMusicAudioSources,
+                           false);
 
 
             if (_IsPlaying)
             {
                 // Fade out the audio sources playing the previous scene music.
                 SetMusicVolume(_SceneMusicSettings[_LastMusicSettingsIndex].VolumeAdjustment * (1 - percent), 
-                               _LastMusicAudioSources);
+                               _LastMusicAudioSources,
+                               false);
             }
 
 
@@ -338,11 +340,15 @@ public class MusicPlayer : MonoBehaviour
         }
     }
 
-    private void SetMusicVolume(float volume, List<AudioSource> audioSources)
+    private void SetMusicVolume(float volume, List<AudioSource> audioSources, bool ignoreTracksThatAreMuted = false)
     {
         for (int i = 0; i < audioSources.Count; i++)
         {
-            audioSources[i].volume = Mathf.Clamp01(volume);
+            if (!ignoreTracksThatAreMuted ||
+                (ignoreTracksThatAreMuted && audioSources[i].volume > 0)) // If ignoreTracksThatAreMutedIsTrue, then only change the volume if the track isn't muted.
+            {
+                audioSources[i].volume = Mathf.Clamp01(volume);
+            }
         }
     }       
 
