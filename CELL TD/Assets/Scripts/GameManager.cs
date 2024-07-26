@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 
@@ -18,9 +19,18 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+
+    [Tooltip("The Master audio mixer.")]
+    [SerializeField]
+    private AudioMixerGroup _MasterAudioMixerGroup;
+
+
     private SettingsWindow _SettingsWindowInstance;
 
     private StateMachine _StateMachine;
+
+    private string _CurrentSceneName = string.Empty;
+    private string _LastSceneName = string.Empty;
 
 
 
@@ -40,12 +50,16 @@ public class GameManager : MonoBehaviour
 
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
 
-
         _StateMachine = GetComponent<StateMachine>();
         if (_StateMachine == null)
             throw new Exception($"The GameManager game object \"{gameObject.name}\" does not have a StateMachine component!");
 
         InitStateMachine();
+    }
+
+    void Start()
+    {
+        SettingsWindow_AudioPanel.InitAudioVolumeLevels(_MasterAudioMixerGroup);
     }
 
     /// <summary>
@@ -134,6 +148,17 @@ public class GameManager : MonoBehaviour
     /// <param name="next">The new active scene.</param>
     private void OnActiveSceneChanged(Scene current, Scene next)
     {
+        _LastSceneName = _CurrentSceneName;
+        _CurrentSceneName = next.name;
+       
+        // If we're going from StartUp scene to MainMenu scene, then just return so the music will simply keep playing.
+        if (_LastSceneName == "StartUp" && _CurrentSceneName == "MainMenu")
+            return;
+
+
+        SettingsWindow_AudioPanel.InitAudioVolumeLevels(_MasterAudioMixerGroup);
+        MusicPlayer.Instance.PlayMusic(next.name);
+
         UpdateReferences();
         StartCoroutine(OnSceneChangedEnableHUD());
     }
@@ -266,6 +291,7 @@ public class GameManager : MonoBehaviour
 
     public bool IsInitialized { get; private set; }
 
+    public AudioMixerGroup MasterAudioMixer { get { return _MasterAudioMixerGroup; } }
     public int CurrentLevelNumber { get; set; } = 1;
     public HealthSystem HealthSystem { get; private set; }
     public MoneySystem MoneySystem { get; private set; }
