@@ -47,8 +47,12 @@ public class WaveManager : MonoBehaviour
     private int _CurrentWaveNumber = 0;
     private bool _WaveInProgress = false;
 
+    private int _MusicIntensityBoostCount = 0;
+
+
     private void Awake()
     {
+
     }
 
     private void InitInstance()
@@ -85,6 +89,17 @@ public class WaveManager : MonoBehaviour
             LevelCleared?.Invoke(this, EventArgs.Empty);
 
             VictoryScreen.Show();
+        }
+
+        if (_CurrentWaveNumber >= _WavesList.Count * 0.5f && _MusicIntensityBoostCount < 1)
+        {
+            _MusicIntensityBoostCount = 1;
+            MusicPlayer.Instance.AdvanceToNextTrackInGroup();
+        }
+        else if (_CurrentWaveNumber == _WavesList.Count && _MusicIntensityBoostCount < 2)
+        {
+            _MusicIntensityBoostCount = 2;
+            MusicPlayer.Instance.AdvanceToNextTrackInGroup();
         }
     }
 
