@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scene: {fileID: 102900000, guid: de83d74cdb85a1942a5fe5d73c2a92a0, type: 3}
   VolumeAdjustment: 1
-  FadeIn: 1
+  EnableFadeIn: 1
   SyncTracks: 0
   MusicClips:
   - {fileID: 8300000, guid: 371911d11c2fb4144acd87282887fcc3, type: 3}
+  _SceneName: Credits

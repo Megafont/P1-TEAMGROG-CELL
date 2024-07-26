@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scene: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
   VolumeAdjustment: 1
-  FadeIn: 1
+  EnableFadeIn: 1
   SyncTracks: 1
   MusicClips:
   - {fileID: 8300000, guid: 371911d11c2fb4144acd87282887fcc3, type: 3}

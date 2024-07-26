@@ -7999,6 +7999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Background
       objectReference: {fileID: 0}
+    - target: {fileID: 6755829399434632680, guid: ed5c52171c75dd94f9215ff8079b47c2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
