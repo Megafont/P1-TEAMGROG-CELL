@@ -40,7 +40,7 @@ public class GameState_StartUp : GameState_Base
         // Switch to main menu after 5 seconds for now.
         _Timer += Time.deltaTime;
         if (StartUp.StartUpIsComplete &&
-            (_Timer >= 5.0f || _AnyButtonPressed))
+            (_Timer >= 5f || _AnyButtonPressed))
         {
             _parent.NotifyInitializationCompleted();
         }
