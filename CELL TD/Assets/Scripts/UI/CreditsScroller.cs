@@ -12,7 +12,7 @@ public class CreditsScroller : MonoBehaviour
 
     [Tooltip("This is the starting y-position of the credits. It should have them entirely below the bottom of the screen.")]
     [SerializeField]
-    private int _StartingYPosition = -500;
+    private int _StartingYPosition = -600;
 
     [Tooltip("How fast (in units per second) that the credits should scroll.")]
     [SerializeField]
@@ -36,7 +36,7 @@ public class CreditsScroller : MonoBehaviour
 
     void Awake()
     {
-        InputSystem.onAnyButtonPress.CallOnce(OnAnyButtonPress);        
+        //InputSystem.onAnyButtonPress.CallOnce(OnAnyButtonPress);        
     }
 
     // Start is called before the first frame update
