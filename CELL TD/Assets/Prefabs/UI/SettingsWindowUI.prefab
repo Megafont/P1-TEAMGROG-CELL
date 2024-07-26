@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4419756565142636145
 MonoBehaviour:
@@ -90,10 +90,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152577281633020196}
-        m_TargetAssemblyTypeName: SoundSaver, Assembly-CSharp
-        m_MethodName: SetVolumeFromSlider
-        m_Mode: 1
+      - m_Target: {fileID: 2829926084580683250}
+        m_TargetAssemblyTypeName: SettingsWindow_AudioPanel, Assembly-CSharp
+        m_MethodName: OnSfxVolumeChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -252,7 +252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1991081967454444748
 RectTransform:
   m_ObjectHideFlags: 0
@@ -270,10 +270,10 @@ RectTransform:
   - {fileID: 4486195403852169520}
   m_Father: {fileID: 5868981726592841110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -180}
-  m_SizeDelta: {x: 480, y: 20}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6547510144902205542
 MonoBehaviour:
@@ -322,14 +322,14 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 70
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1359347720320855726}
-        m_TargetAssemblyTypeName: SoundSaver, Assembly-CSharp
-        m_MethodName: SetVolumeFromSlider
-        m_Mode: 1
+      - m_Target: {fileID: 2829926084580683250}
+        m_TargetAssemblyTypeName: SettingsWindow_AudioPanel, Assembly-CSharp
+        m_MethodName: OnMasterVolumeChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -846,7 +846,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1297161216293228303
 MonoBehaviour:
@@ -899,10 +899,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 798145410792887851}
-        m_TargetAssemblyTypeName: SoundSaver, Assembly-CSharp
-        m_MethodName: SetVolumeFromSlider
-        m_Mode: 1
+      - m_Target: {fileID: 2829926084580683250}
+        m_TargetAssemblyTypeName: SettingsWindow_AudioPanel, Assembly-CSharp
+        m_MethodName: OnMusicVolumeChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1056,7 +1056,7 @@ GameObject:
   - component: {fileID: 7908439780203669529}
   - component: {fileID: 933963156318635426}
   m_Layer: 0
-  m_Name: Gameplay Settings
+  m_Name: Gameplay Settings Pane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1097,10 +1097,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 5
+    m_Right: 5
+    m_Top: 5
+    m_Bottom: 5
   m_ChildAlignment: 0
   m_Spacing: 10
   m_ChildForceExpandWidth: 1
@@ -1145,7 +1145,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8916448851758628350
 CanvasRenderer:
@@ -1621,10 +1621,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4486195403852169520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7, y: 0}
-  m_AnchorMax: {x: 0.7, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1000894386803701888
 CanvasRenderer:
@@ -1844,7 +1844,7 @@ RectTransform:
   m_Father: {fileID: 5491663314373768492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.7, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3779,7 +3779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: 500
-  m_MinHeight: 500
+  m_MinHeight: 525
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: 1
@@ -3843,12 +3843,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5868981726592841110}
+  - component: {fileID: 2829926084580683250}
   - component: {fileID: 4095364906132627163}
-  - component: {fileID: 1359347720320855726}
-  - component: {fileID: 798145410792887851}
-  - component: {fileID: 152577281633020196}
   m_Layer: 0
-  m_Name: Audio Settings
+  m_Name: Audio Settings Pane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3868,12 +3866,12 @@ RectTransform:
   m_Children:
   - {fileID: 2482866473524117364}
   - {fileID: 3073634088223946365}
+  - {fileID: 5558162810472682373}
+  - {fileID: 1991081967454444748}
   - {fileID: 4949784514007516435}
   - {fileID: 6618968785330573691}
   - {fileID: 2618778476127315757}
   - {fileID: 6203347702348469026}
-  - {fileID: 5558162810472682373}
-  - {fileID: 1991081967454444748}
   m_Father: {fileID: 1266891338038568409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3881,6 +3879,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2829926084580683250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824241986194510151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97028f470672fdc48a8b0dda8d46c9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Slider_MasterVolume: {fileID: 6547510144902205542}
+  _Slider_SfxVolume: {fileID: 4419756565142636145}
+  _Slider_MusicVolume: {fileID: 1297161216293228303}
+  _MasterAudioMixer: {fileID: 24300002, guid: 5fda5b79406e1e84c9c302d5aaf470ba, type: 2}
 --- !u!114 &4095364906132627163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3894,10 +3908,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 5
+    m_Right: 5
+    m_Top: 5
+    m_Bottom: 5
   m_ChildAlignment: 0
   m_Spacing: 10
   m_ChildForceExpandWidth: 1
@@ -3907,54 +3921,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1359347720320855726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7824241986194510151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b3391b9aa46c74db87e34f36a578f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 6547510144902205542}
-  mixer: {fileID: 0}
-  savedMixer: Master
-  mixerName: Master
---- !u!114 &798145410792887851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7824241986194510151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b3391b9aa46c74db87e34f36a578f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 1297161216293228303}
-  mixer: {fileID: 24100000, guid: 5fda5b79406e1e84c9c302d5aaf470ba, type: 2}
-  savedMixer: Music
-  mixerName: Music
---- !u!114 &152577281633020196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7824241986194510151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b3391b9aa46c74db87e34f36a578f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 4419756565142636145}
-  mixer: {fileID: 24100000, guid: 738cc493087635740b90026353b86bf7, type: 2}
-  savedMixer: SFX
-  mixerName: SFX
 --- !u!1 &7831301628967198475
 GameObject:
   m_ObjectHideFlags: 0
@@ -4106,7 +4072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5558162810472682373
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4121,10 +4087,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5868981726592841110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -153.94836}
-  m_SizeDelta: {x: 480, y: 12.103257}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 12.103257}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2159932125244313486
 CanvasRenderer:
@@ -4367,7 +4333,7 @@ GameObject:
   - component: {fileID: 8791595063359117481}
   - component: {fileID: 7237391392300395922}
   m_Layer: 0
-  m_Name: Video Settings
+  m_Name: Video Settings Pane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4408,10 +4374,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 5
+    m_Right: 5
+    m_Top: 5
+    m_Bottom: 5
   m_ChildAlignment: 0
   m_Spacing: 10
   m_ChildForceExpandWidth: 1
@@ -4456,7 +4422,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2292384031991744776
 CanvasRenderer:
