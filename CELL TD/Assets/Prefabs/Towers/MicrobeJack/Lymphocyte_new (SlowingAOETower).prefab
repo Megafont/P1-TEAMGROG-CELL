@@ -221,15 +221,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2520f8a710df0864bb5bc07b3038897e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.009
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2520f8a710df0864bb5bc07b3038897e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.009
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2520f8a710df0864bb5bc07b3038897e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.009
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2520f8a710df0864bb5bc07b3038897e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -392,7 +392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eb24dd541293d9e4091ed3d862023cc0, type: 3}
       propertyPath: m_Name
-      value: Lymphocyte (SlowingAOETower)
+      value: Lymphocyte_new (SlowingAOETower)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eb24dd541293d9e4091ed3d862023cc0, type: 3}
       propertyPath: m_Layer
