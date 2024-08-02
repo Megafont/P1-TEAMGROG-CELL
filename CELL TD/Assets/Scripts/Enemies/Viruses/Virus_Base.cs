@@ -84,10 +84,13 @@ public class Virus_Base : Enemy_Base, IVirus
 
     private void TryToConvertPlayerUnitsInRange()
     {
+        Debug.Log("0");
+
         List<RaycastHit> playerUnits = Physics.SphereCastAll(transform.position, EnemyInfo_Virus.ConversionRadius, Vector3.up, 0.1f, LayerMask.GetMask("Player Units")).ToList();
         if (playerUnits == null || playerUnits.Count < 1)
             return;
 
+        Debug.Log("1");
 
         // This loop iterates through all player units that are known to be within range.
         // It does so in reverse order, so that when we remove one from from the list after converting

@@ -82,7 +82,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Animation_Length_In_Seconds: 3
+    - _Animation_Length_In_Seconds: 6
     - _BUILTIN_AlphaClip: 0
     - _BUILTIN_Blend: 0
     - _BUILTIN_CullMode: 2

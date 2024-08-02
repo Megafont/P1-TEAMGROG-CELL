@@ -272,6 +272,9 @@ MonoBehaviour:
   _audioPlayer: {fileID: 6658878590289364191}
   _fatal: {fileID: 8300000, guid: 6f0232af11526d14186e0f1bfe437e2f, type: 3}
   _damage: {fileID: 8300000, guid: 8758a12de062da347b59d9b5c4af3a88, type: 3}
+  _ReinforcementsSpawnerIndex: -1
+  _FirstReinforcementsDelay: 3
+  _ReinforcementsSpawnFrequency: 1
 --- !u!82 &6658878590289364191 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2418216701905473654, guid: 01793a8bdc76baa4fbe4cf1006d1b2ed, type: 3}

@@ -1,7 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 using UnityEngine;
+
+using Random = UnityEngine.Random;
 
 
 /// <summary>
@@ -10,26 +14,84 @@ using UnityEngine;
 /// 
 public class BossSpawner_Base : Enemy_Base    
 {
-    private Vector3 _startPos;
+    [Header("Reinforcements Settings")]
+
+    [Tooltip("This sets which spawner the boss's reinforcements will come from. Set this value to -1 to make each enemy come from a random spawner. Setting it to -2 is an easy way to make reinforcements come from the same path as the boss itself. NOTE: Which lane the boss itself spawns from depends on which spawner you added it under in the WaveList asset for this level.")]
+    [Min(-1)]
+    [SerializeField]
+    private int _ReinforcementsSpawnerIndex = -1;
+
+    [Tooltip("Specifies the number of seconds that will elapse before the first reinforcements start spawning in.")]
+    [Min(0)]
+    [SerializeField]
+    private float _FirstReinforcementsDelay = 2.0f;
+
+    [Tooltip("Sets how many seconds will elapse between each reinforcement spawning in.")]
+    [Min(0)]
+    [SerializeField]
+    private float _ReinforcementsSpawnFrequency = 1.0f;
+
+
+
+    private Vector3 _BossStartPos;
+    private Vector3 _StartPos;
+    private List<EnemySpawner> _SpawnPoints;
 
     new void Awake()
     {
         base.Awake();
+
+        _BossStartPos = transform.position;
+        _SpawnPoints = GameObject.FindObjectsByType<EnemySpawner>(FindObjectsSortMode.None).ToList();
+
+        if (_SpawnPoints.Count == 0)
+        {
+            throw new Exception("There are no enemy spawners on this level! The boss cannot spawn, and will not be able to spawn in reinforcements!");
+        }
+        else if (_ReinforcementsSpawnerIndex >= _SpawnPoints.Count)
+        {
+            Debug.LogWarning("The EnemySpawnIndex is set to a value that is higher than the last spawner's index! Reinforcements will spawn from random paths to avoid crashing.");
+        }
     }
 
     new void Start()
     {
         base.Start();
-        _startPos = transform.position;
-        InvokeRepeating("SpawnEnemy", 2.0f, 2.0f);
+        InvokeRepeating("SpawnEnemy", _FirstReinforcementsDelay, _ReinforcementsSpawnFrequency);
         // Do initialization here.
     }
 
     void SpawnEnemy()
-    {
-        GameObject newEnemy = Instantiate(EnemyInfo_BossSpawner.spawnableEnemies[Random.Range(0,EnemyInfo_BossSpawner.spawnableEnemies.Length)]);
-        newEnemy.transform.position = _startPos;
+    {       
+        GameObject newEnemy = Instantiate(EnemyInfo_BossSpawner.spawnableEnemies[Random.Range(0, EnemyInfo_BossSpawner.spawnableEnemies.Length)]);
+
+        if (_SpawnPoints.Count == 0 || _ReinforcementsSpawnerIndex == -2)
+        {
+            _StartPos = _BossStartPos;                
+        }
+        else if (_ReinforcementsSpawnerIndex == -1)
+        {
+            _StartPos = SelectRandomSpawnPos();
+        }
+        else
+        {
+            if (_ReinforcementsSpawnerIndex < _SpawnPoints.Count)
+            {
+                _StartPos = _SpawnPoints[_ReinforcementsSpawnerIndex].transform.position;
+            }
+            else
+            {
+                _StartPos = SelectRandomSpawnPos();
+            }
+        }
+
+        newEnemy.transform.position = _StartPos;
         WaveManager.Instance.EnemyAdded();
+    }
+
+    private Vector3 SelectRandomSpawnPos()
+    {
+        return _SpawnPoints[Random.Range(0, _SpawnPoints.Count)].transform.position;
     }
 
     protected override void InitEnemyStats()
