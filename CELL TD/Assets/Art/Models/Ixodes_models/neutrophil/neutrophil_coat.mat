@@ -110,7 +110,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _Displacement_Scale: 0.1
     - _DstBlend: 10
-    - _Emissive_Strength: 1
+    - _Emissive_Strength: 0.25
     - _Fresnel_Effect_Strength: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
