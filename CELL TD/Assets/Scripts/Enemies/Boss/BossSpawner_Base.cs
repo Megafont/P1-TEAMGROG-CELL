@@ -87,6 +87,9 @@ public class BossSpawner_Base : Enemy_Base
 
         newEnemy.transform.position = _StartPos;
         WaveManager.Instance.EnemyAdded();
+
+        // Uncomment the following line to make it so enemies spawned by the boss don't award money to the player on death. This is pretty much the same line of code that is in Virus_Base.cs when a virus converts a macrophage into a new virus.
+        //newEnemy.GetComponent<Enemy_Base>().GivesMoneyOnDeath = false; // Flag that this enemy should not give money to the player on death.
     }
 
     private Vector3 SelectRandomSpawnPos()
