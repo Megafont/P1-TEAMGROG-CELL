@@ -87,7 +87,6 @@ public class WaveManager : MonoBehaviour
         if (!_WaveInProgress && WaveNumber == _WavesList.Count && 
             GameManager.Instance.HealthSystem.HealthAmount > 0)
         {
-            Debug.Log("WIN!!");
             LevelCleared?.Invoke(this, EventArgs.Empty);
 
             VictoryScreen.Show();
