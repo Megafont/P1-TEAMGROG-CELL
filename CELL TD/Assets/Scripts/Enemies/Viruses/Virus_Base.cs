@@ -84,10 +84,13 @@ public class Virus_Base : Enemy_Base, IVirus
 
     private void TryToConvertPlayerUnitsInRange()
     {
+        Debug.Log("0");
+
         List<RaycastHit> playerUnits = Physics.SphereCastAll(transform.position, EnemyInfo_Virus.ConversionRadius, Vector3.up, 0.1f, LayerMask.GetMask("Player Units")).ToList();
         if (playerUnits == null || playerUnits.Count < 1)
             return;
 
+        Debug.Log("1");
 
         // This loop iterates through all player units that are known to be within range.
         // It does so in reverse order, so that when we remove one from from the list after converting
@@ -98,9 +101,11 @@ public class Virus_Base : Enemy_Base, IVirus
         {
             GameObject playerUnit = playerUnits[i].collider.gameObject;
 
-            if (playerUnit == null)
+            if (playerUnit == null && playerUnit.activeSelf == true)
             {
+                playerUnit.SetActive(false); // Disable it so we don't try to convert it again.
                 playerUnits.RemoveAt(i);
+
             }
             else if (Vector3.Distance(transform.position, playerUnit.transform.position) <= EnemyInfo_Virus.ConversionRadius)
             {
@@ -114,7 +119,9 @@ public class Virus_Base : Enemy_Base, IVirus
 
                     // Spawn a new virus at the location of the player unit.
                     GameObject newVirus = Instantiate(EnemyInfo_Virus.Prefab, playerUnit.transform.position, Quaternion.identity, transform.parent);
-                    newVirus.GetComponent<Virus_Base>().NextWayPoint = NextWayPoint;
+                    Virus_Base virus = newVirus.GetComponent<Virus_Base>();
+                    virus.NextWayPoint = NextWayPoint;
+                    virus.GivesMoneyOnDeath = false; // Flag that this enemy should not give money to the player on death.
 
                     // Remove the player unit object from the list.
                     playerUnits.RemoveAt(i);
@@ -123,6 +130,12 @@ public class Virus_Base : Enemy_Base, IVirus
                     // its OnUnitDied event never gets called. The tower ends up not knowing it was destroyed, so its unit counter gets off.
                     // After this happens a few times, it will never spawn any more units because it thinks it still has these ones.
                     playerUnit.GetComponent<SpawnedUnit>().ApplyDamage(10000f); // This number is stupidly big just to make sure it dies.                   
+
+                    // Let the WaveManager know about the existence of this new virus enemy.
+                    WaveManager.Instance.EnemyAdded();
+
+                    // Exit this loop top stop us from converting more than one macrophage into a virus at a time.
+                    break;
                 }
                 else
                 {

@@ -84,7 +84,8 @@ public class WaveManager : MonoBehaviour
             _SecondsSinceWaveStart += Time.deltaTime;
 
 
-        if (!_WaveInProgress && WaveNumber == _WavesList.Count && GameManager.Instance.HealthSystem.HealthAmount > 0)
+        if (!_WaveInProgress && WaveNumber == _WavesList.Count && 
+            GameManager.Instance.HealthSystem.HealthAmount > 0)
         {
             LevelCleared?.Invoke(this, EventArgs.Empty);
 

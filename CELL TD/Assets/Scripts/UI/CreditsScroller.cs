@@ -36,7 +36,7 @@ public class CreditsScroller : MonoBehaviour
 
     void Awake()
     {
-        //InputSystem.onAnyButtonPress.CallOnce(OnAnyButtonPress);        
+        InputSystem.onAnyButtonPress.CallOnce(OnAnyButtonPress);        
     }
 
     // Start is called before the first frame update
