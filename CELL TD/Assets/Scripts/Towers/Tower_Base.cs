@@ -20,6 +20,12 @@ public class Tower_Base : MonoBehaviour
     protected GameObject rangeShower;//TODO find better option later
 
     [SerializeField]
+    protected GameObject newModel;//for the new imported model asset
+
+    [SerializeField]
+    protected Animator newModelAnimator; // the animator for the new model
+
+    [SerializeField]
     private AudioClip _placementClip;
 
     [SerializeField]
@@ -46,10 +52,12 @@ public class Tower_Base : MonoBehaviour
     protected float _RefundPercentage; // The percentage of the build cost that is recovered when you destroy the tower.
     protected float _RefundAmount; // The amount of nutrients recovere when destroying the tower.
 
-
+    
     
     public virtual void Start()
     {
+        //newModelAnimator = newModel.GetComponent<Animator>();
+
         _audioPlayer.clip = _placementClip;
         _audioPlayer.Play();
 

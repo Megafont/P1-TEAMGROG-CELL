@@ -468,7 +468,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.047, z: 0.063}
-  m_LocalScale: {x: 0.013, y: 0.013, z: 0.013}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8879528566716807029}
@@ -1066,7 +1066,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.507122, y: -0.0000009536743, z: -7.0599184}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 13, y: 13, z: 13}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: -8679921383154817045}
@@ -1140,6 +1140,8 @@ MonoBehaviour:
   _TowerInfo: {fileID: 11400000, guid: 35d5f31950d1d7f43ad08ec16ceb4bd5, type: 2}
   range: {fileID: 1932472600930199040}
   rangeShower: {fileID: 5735587683517254236}
+  newModel: {fileID: 919132149155446097}
+  newModelAnimator: {fileID: 5511563902817324231}
   _placementClip: {fileID: 8300000, guid: e76faca42240de948b656106f9bb5693, type: 3}
   _audioPlayer: {fileID: 3168543229636747388}
   targets: []
