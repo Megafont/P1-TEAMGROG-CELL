@@ -63,9 +63,13 @@ public class Enemy_Base : MonoBehaviour, IEnemy
     [SerializeField]
     private AudioClip _damage;
 
+    private Animator animator;
+
     protected void Awake()
     {
         InitEnemyStats();
+
+        animator = GetComponentInChildren<Animator>();
 
         IsDead = false;
 
@@ -282,10 +286,24 @@ public class Enemy_Base : MonoBehaviour, IEnemy
             OnEnemyReachedGoal?.Invoke(this, EventArgs.Empty);
         }
 
+        if(animator != null)
+        {
+            animator.SetTrigger("isDead");
+            // Destroy this enemy after one second
+            StartCoroutine(DestroyAfterDelay(1f));
+        } else
+        {
+            Destroy(gameObject);
+        }
         
-        // Destroy this enemy.
-        Destroy(gameObject);
 
+    }
+
+    // delay the death of the object for the death animation
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
     }
 
     protected void GetNextWaypoint()
