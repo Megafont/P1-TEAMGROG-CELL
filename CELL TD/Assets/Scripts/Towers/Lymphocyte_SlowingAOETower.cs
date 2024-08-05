@@ -9,6 +9,8 @@ public class Lymphocyte_SlowingAOETower : Tower_Base
     float _EnemySearchTimer;
     private int effectStrength = 0;
 
+    private bool isAttacking;
+
     public override void Update()
     {
         base.Update();
@@ -46,9 +48,13 @@ public class Lymphocyte_SlowingAOETower : Tower_Base
             Enemy_Base enemy = hits[i].collider.gameObject.GetComponent<Enemy_Base>();
             if (enemy != null)
             {
+                isAttacking = true;
+                base.newModelAnimator.SetBool("isAttacking", isAttacking);
+                print("is attacking " + isAttacking);
                 StatusEffectsManager effectsMgr = enemy.GetComponent<StatusEffectsManager>();
                 if (effectsMgr != null)
                 {
+                    
                     switch (TowerLevel)
                     {
                         case 1:
@@ -68,6 +74,9 @@ public class Lymphocyte_SlowingAOETower : Tower_Base
                             break;
                     }
                 }
+                isAttacking = false;
+                base.newModelAnimator.SetBool("isAttacking", isAttacking);
+                print("stop attacking " + isAttacking);
             }
 
         } // end for i
