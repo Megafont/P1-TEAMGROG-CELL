@@ -22,9 +22,9 @@ public class Placer : MonoBehaviour
     private bool overlapping = false;
 
     void Start()
-    {
+    {   
         MeshFilter[] sourceMeshFilters = tower.GetComponentsInChildren<MeshFilter>();
-
+        
         foreach (MeshFilter sourceMeshFilter in sourceMeshFilters)
         {
             GameObject newModel = new GameObject(sourceMeshFilter.gameObject.name);
@@ -44,6 +44,8 @@ public class Placer : MonoBehaviour
         }
 
         UpdateMats(true);
+        
+
         overlapping = true;
     }
 

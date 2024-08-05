@@ -269,8 +269,12 @@ public class Enemy_Base : MonoBehaviour, IEnemy
         IsDead = true;
         if(type == 1)
         {
-            // Fire the OnCatDied event.
-            GameManager.Instance.MoneySystem.AddCurrency(_EnemyInfo.CurrencyGain);
+        
+            // Give the player money if this enemy's GivesMoneyOnDeath flag is true.
+            if (GivesMoneyOnDeath)
+                GameManager.Instance.MoneySystem.AddCurrency(_EnemyInfo.CurrencyGain);
+
+            // Fire the OnEnemyDied event.
             OnEnemyDied?.Invoke(this, EventArgs.Empty);
         }
         else if(type == 2)  
@@ -403,4 +407,11 @@ public class Enemy_Base : MonoBehaviour, IEnemy
     }
 
     public EnemyInfo_Base EnemyInfo { get { return _EnemyInfo; } }
+
+    /// <summary>
+    /// This property is set to false by code that spawns in new enemies that aren't from an EnemySpawner. Examples would be a virus converting a macrophage into a new virus,
+    /// or a boss enemy that spawns reinforcements via the BossSpawner_Base script. That code should set this to true, so that the code that
+    /// gives the player money will know that this enemy should not give the player money.
+    /// </summary>
+    public bool GivesMoneyOnDeath { get; set; } = true;
 }

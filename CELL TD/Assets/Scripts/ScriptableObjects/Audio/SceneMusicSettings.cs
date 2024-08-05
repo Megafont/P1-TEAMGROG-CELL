@@ -47,7 +47,6 @@ public class SceneMusicSettings : ScriptableObject
         if (Scene != null)
         {
             SceneName = Scene.name;
-            Debug.Log($"SAVED: {SceneName}");
         }
         else
             SceneName = "";

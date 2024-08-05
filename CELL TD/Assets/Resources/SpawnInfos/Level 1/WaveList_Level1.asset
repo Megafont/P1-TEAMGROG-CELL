@@ -192,7 +192,7 @@ MonoBehaviour:
         NumberToSpawn: 5
         TimeBetweenSpawns: 0.5
       - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
-        NumberToSpawn: 5
+        NumberToSpawn: 10
         TimeBetweenSpawns: 1
     - StartDelay: 20
       EnemySpawnGroups:
@@ -203,7 +203,7 @@ MonoBehaviour:
         NumberToSpawn: 15
         TimeBetweenSpawns: 0.5
       - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
-        NumberToSpawn: 5
+        NumberToSpawn: 15
         TimeBetweenSpawns: 1
       - EnemyInfo: {fileID: 11400000, guid: 8a9f3b71638dc434fa1011806a4e7d7a, type: 2}
         NumberToSpawn: 1
@@ -211,11 +211,11 @@ MonoBehaviour:
     - StartDelay: 10
       EnemySpawnGroups:
       - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
-        NumberToSpawn: 5
+        NumberToSpawn: 20
         TimeBetweenSpawns: 0.5
       - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
         NumberToSpawn: 15
         TimeBetweenSpawns: 0.5
       - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
-        NumberToSpawn: 5
+        NumberToSpawn: 15
         TimeBetweenSpawns: 1
