@@ -45,9 +45,6 @@ public class BackgroundPlaneResizer : MonoBehaviour
             _MainCam = Camera.main;
 
 
-        float distanceFromCam = 10f;
-
-
         MakePlaneFillScreenAtDistance(_DistanceFromCamera);
     }
 
