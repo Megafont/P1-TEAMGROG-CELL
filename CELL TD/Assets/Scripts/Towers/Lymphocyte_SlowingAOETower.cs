@@ -41,6 +41,8 @@ public class Lymphocyte_SlowingAOETower : Tower_Base
                                                   0, 
                                                   LayerMask.GetMask("Enemies"), 
                                                   QueryTriggerInteraction.Collide);
+        
+        int enemyCount = 0;
         for (int i = 0; i < hits.Length; i++)
         {
             //Debug.Log("Hit: " + hits[i].collider.gameObject.name);
@@ -48,13 +50,10 @@ public class Lymphocyte_SlowingAOETower : Tower_Base
             Enemy_Base enemy = hits[i].collider.gameObject.GetComponent<Enemy_Base>();
             if (enemy != null)
             {
-                isAttacking = true;
-                base.newModelAnimator.SetBool("isAttacking", isAttacking);
-                print("is attacking " + isAttacking);
+                enemyCount++;
                 StatusEffectsManager effectsMgr = enemy.GetComponent<StatusEffectsManager>();
                 if (effectsMgr != null)
-                {
-                    
+                {                    
                     switch (TowerLevel)
                     {
                         case 1:
@@ -74,12 +73,14 @@ public class Lymphocyte_SlowingAOETower : Tower_Base
                             break;
                     }
                 }
-                isAttacking = false;
-                base.newModelAnimator.SetBool("isAttacking", isAttacking);
+                isAttacking = enemyCount > 0;
+                _newModelAnimator.SetBool("isAttacking", isAttacking);
                 print("stop attacking " + isAttacking);
             }
 
         } // end for i
+
+        _newModelAnimator.SetBool("isAttacking", enemyCount > 0);
     }
 
     /// <summary>

@@ -23,6 +23,7 @@ public class TowerInfo_Base : ScriptableObject
     public TowerTypes TowerType; // The type of this tower.
     public Sprite DisplayIcon; // The icon used for this tower in the UI
     public GameObject Prefab; // The prefab for this tower type
+       
     public TargetingTypes TargetingType; // The targeting type of this tower
     public List<EnemyTypes> TargetedEnemyTypes; // The types of enemies this tower affects
 

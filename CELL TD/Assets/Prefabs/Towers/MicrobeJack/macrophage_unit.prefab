@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 392541069075768742}
   - component: {fileID: 3206497722453190218}
   m_Layer: 7
-  m_Name: macrophage_unit
+  m_Name: Macrophage_unit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

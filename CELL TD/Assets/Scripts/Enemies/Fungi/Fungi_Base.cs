@@ -26,17 +26,22 @@ public class Fungi_Base : Enemy_Base, IFungi
         // Do initialization here.
     }
 
-    protected override void KillEnemy(int type)
+    protected override void KillEnemy(EnemyDeathTypes type)
     {
-        for (int i = 0; i < EnemyInfo_Fungi.SporesPerBurst; i++)
+        // I had to add this if statement, because otherwise the fungi was splitting when reaching the goal and spawning spores.
+        // The spores then caused a null reference exception because they couldn't find the next node since there isn't one at that point.
+        if (type == EnemyDeathTypes.KilledByPlayer)
         {
-            var newEnemy = Instantiate(_sporeEnemy);
-            newEnemy.transform.position = new Vector3(transform.position.x+Random.Range(-1.0f,1.0f), transform.position.y, transform.position.z + Random.Range(-1.0f, 1.0f));
-            newEnemy.GetComponent<Enemy_Base>()._NextWayPoint = _NextWayPoint;
-            newEnemy.GetComponent<Enemy_Base>()._spawnedEnemy = true;
-            WaveManager.Instance.EnemyAdded();
+            for (int i = 0; i < EnemyInfo_Fungi.SporesPerBurst; i++)
+            {
+                var newEnemy = Instantiate(_sporeEnemy);
+                newEnemy.transform.position = new Vector3(transform.position.x + Random.Range(-1.0f, 1.0f), transform.position.y, transform.position.z + Random.Range(-1.0f, 1.0f));
+                newEnemy.GetComponent<Enemy_Base>()._NextWayPoint = _NextWayPoint;
+                newEnemy.GetComponent<Enemy_Base>()._spawnedEnemy = true;
+                WaveManager.Instance.EnemyAdded();
+            }
+            base.KillEnemy(type);
         }
-        base.KillEnemy(type);
     }
 
     /// <summary>

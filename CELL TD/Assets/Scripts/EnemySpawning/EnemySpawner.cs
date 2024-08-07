@@ -74,6 +74,7 @@ public class EnemySpawner : MonoBehaviour
             }
 
             enemy = Instantiate(_EnemySpawningInfo.EnemySpawnGroups[currentEnemyType].EnemyInfo.Prefab, transform);
+
             float delayBetween = _EnemySpawningInfo.EnemySpawnGroups[currentEnemyType].TimeBetweenSpawns;
 
 

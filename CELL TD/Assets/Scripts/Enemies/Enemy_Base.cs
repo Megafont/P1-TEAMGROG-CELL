@@ -17,6 +17,13 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(StatusEffectsManager))]
 public class Enemy_Base : MonoBehaviour, IEnemy
 {
+    public enum EnemyDeathTypes
+    {
+        KilledByPlayer,
+        ReachedGoal,
+    }
+
+
     public static bool ShowDistractednessBar = true;
 
     // This event is static so we don't need to subscribe to every enemy instance's OnEnemyDied event.
@@ -102,6 +109,13 @@ public class Enemy_Base : MonoBehaviour, IEnemy
                 GetNextWaypoint();
             }
         }
+
+        // Now rotate the enemy to face the next waypoint.
+        if (_NextWayPoint != null)
+        {
+            transform.LookAt(_NextWayPoint.transform.position);
+        }
+
 
         _NavMeshAgent.SetDestination(_NextWayPoint.transform.position);
         _NavMeshAgent.speed = _EnemyInfo.MovementSpeed;
@@ -240,7 +254,7 @@ public class Enemy_Base : MonoBehaviour, IEnemy
                 targetingTower.targets.Remove(this.gameObject);
             }
 
-            KillEnemy(1);
+            KillEnemy(EnemyDeathTypes.KilledByPlayer);
         }
     }
 
@@ -250,7 +264,7 @@ public class Enemy_Base : MonoBehaviour, IEnemy
         if (other.gameObject.CompareTag("Goal"))
         {
             _PlayerHealthSystem.TakeDamage((int) _AttackDamage);
-            KillEnemy(2);
+            KillEnemy(EnemyDeathTypes.ReachedGoal);
         }
 
         if (other.gameObject.CompareTag("Bullet"))
@@ -263,7 +277,7 @@ public class Enemy_Base : MonoBehaviour, IEnemy
         }
     }
 
-    protected virtual void KillEnemy(int type)
+    protected virtual void KillEnemy(EnemyDeathTypes type)
     {
         if (IsDead)
             return;
@@ -271,9 +285,9 @@ public class Enemy_Base : MonoBehaviour, IEnemy
 
         // Prevents this function from running twice in rare cases, causing this enemy's death to count as more than one.
         IsDead = true;
-        if(type == 1)
-        {
-        
+
+        if(type == EnemyDeathTypes.KilledByPlayer)
+        {        
             // Give the player money if this enemy's GivesMoneyOnDeath flag is true.
             if (GivesMoneyOnDeath)
                 GameManager.Instance.MoneySystem.AddCurrency(_EnemyInfo.CurrencyGain);
@@ -281,7 +295,7 @@ public class Enemy_Base : MonoBehaviour, IEnemy
             // Fire the OnEnemyDied event.
             OnEnemyDied?.Invoke(this, EventArgs.Empty);
         }
-        else if(type == 2)  
+        else if(type == EnemyDeathTypes.ReachedGoal)
         {
             OnEnemyReachedGoal?.Invoke(this, EventArgs.Empty);
         }
@@ -293,6 +307,7 @@ public class Enemy_Base : MonoBehaviour, IEnemy
             StartCoroutine(DestroyAfterDelay(1f));
         } else
         {
+            gameObject.SetActive(false);
             Destroy(gameObject);
         }
         
@@ -389,7 +404,7 @@ public class Enemy_Base : MonoBehaviour, IEnemy
 
         yield return new WaitForSeconds(0.5f);
 
-        KillEnemy(1);        
+        KillEnemy(EnemyDeathTypes.KilledByPlayer);
     }
    
 

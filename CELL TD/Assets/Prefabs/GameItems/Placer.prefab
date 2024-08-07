@@ -50,4 +50,4 @@ MonoBehaviour:
   badMat: {fileID: 2100000, guid: cc15eff887c24d84587575a9db7db042, type: 2}
   layerToCheck:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 264
