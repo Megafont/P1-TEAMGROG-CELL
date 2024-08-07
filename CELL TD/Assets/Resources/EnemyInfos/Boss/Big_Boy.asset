@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: The Biggest Boy
   Type: 3000
   UiIcon: {fileID: 0}
-  Prefab: {fileID: 3937515291007552044, guid: b14af337bce4c7b4fbf7462d5790b178, type: 3}
+  Prefab: {fileID: 8198833245920403723, guid: 09ae7868bec5af84d8be8be06ec1b844, type: 3}
   AttackDamage: 100
   AttackSpeed: 0.1
   MovementSpeed: 0.6
