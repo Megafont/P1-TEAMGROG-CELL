@@ -54,7 +54,7 @@ public class Neutrophil_ProjectileTower : Tower_Base
             yield return new WaitForSeconds(0.25f);
 
             // We need to check this again here in case things changed since the previous if statement ran a quarter second ago.
-            if (targets.Count > 0 && targets[0] == null)
+            if (targets.Count > 0 && targets[0])
             {
                 GameObject newProjectile = Instantiate(projectile, transform);
                 SimpleProjectile newInfo = newProjectile.GetComponent<SimpleProjectile>();
