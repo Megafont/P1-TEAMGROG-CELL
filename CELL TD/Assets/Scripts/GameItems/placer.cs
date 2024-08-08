@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class Placer : MonoBehaviour
 {
@@ -16,11 +19,14 @@ public class Placer : MonoBehaviour
     [SerializeField]
     private Material badMat;
 
-    [SerializeField]
-    private LayerMask layerToCheck;
-
     private Camera mainCamera;
-    private bool overlapping = false;
+    private bool isOverlapping = false;
+
+    private GameObject towerGhost;
+    private CapsuleCollider towerGhostCollider;
+
+    private bool _isMouseOutsideScreen;
+
 
     void Start()
     {
@@ -30,26 +36,27 @@ public class Placer : MonoBehaviour
          *     places this type of tower, it will not work, as it will be disabled.
          * */
         info.Prefab.SetActive(false);
-        GameObject newModel = Instantiate(info.Prefab, Vector3.zero, Quaternion.identity, transform);
+        towerGhost = Instantiate(info.Prefab, Vector3.zero, Quaternion.identity, transform);
+        towerGhostCollider = towerGhost.GetComponent<CapsuleCollider>();
         info.Prefab.SetActive(true); // Re-enable the active state of the prefab. This is NOT the instance we just spawned in.
 
 
         // Remove the tower component from the spawned prefab before we enable it.
-        Destroy(newModel.GetComponent<Tower_Base>());
+        Destroy(towerGhost.GetComponent<Tower_Base>());
 
         // Enable the prefab so it can receive events and stick to the mouse.
-        newModel.SetActive(true);
+        towerGhost.SetActive(true);
 
         // Set the size of the range bubble to the towers base range.
         // NOTE: FindRecursive() is an extension method I defined in GameObjectUtils.cs. Unlike the normal Transform.find(), this one
         //       is recursive so it can find an object with the specified name, even if it is a child of a child of the parent object.
-        GameObject rangeObj = newModel.transform.FindResursive("Range");
+        GameObject rangeObj = towerGhost.transform.FindResursive("Range");
         rangeObj.transform.localScale = new Vector3(info.BaseRange, info.BaseRange, info.BaseRange);
 
         // Disable all colliders in the tower
         // IMPORTANT: This step is REQUIRED, otherwise you can't place the tower because the tower ghost will detect itself when it does Physics.SphereCast(),
         // which causes it to think you can't place the tower there.
-        Collider[] colliders = newModel.GetComponentsInChildren<Collider>();
+        Collider[] colliders = towerGhost.GetComponentsInChildren<Collider>();
         foreach (Collider collider in colliders)
         {
             collider.enabled = false;
@@ -58,7 +65,7 @@ public class Placer : MonoBehaviour
         // Disable animations if this option is on.
         if (disableAnimations)
         {
-            Animator[] animators = newModel.GetComponentsInChildren<Animator>();
+            Animator[] animators = towerGhost.GetComponentsInChildren<Animator>();
             foreach (Animator animator in animators)
             {
                 animator.enabled = false;
@@ -68,25 +75,38 @@ public class Placer : MonoBehaviour
 
         UpdateMats(true);
         
-        overlapping = true;
+        isOverlapping = true;
     }
 
     void Update()
     {
-        // Get the mouse position in screen space
-        Vector3 mouseScreenPos = Input.mousePosition;
-        mouseScreenPos.y -= 25.0f; //Offset
-        mouseScreenPos.z = Camera.main.transform.position.y;
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
+        Vector2 mousePos = Mouse.current.position.ReadValue();
 
-        mouseWorldPos.y = 0f;
-        transform.position = mouseWorldPos;
+        // Check that the camera is within the screen bounds. If not, it will cause errors so we will just return.
+        Vector2 view = Camera.main.ScreenToViewportPoint(mousePos);
+        _isMouseOutsideScreen = view.x < 0 || view.x > 1 || view.y < 0 || view.y > 1;
+        if (_isMouseOutsideScreen)
+        {            
+            // The multiplying by 100 here just ensures the tower ghost is completely offscreen when the mouse is.
+            transform.position = new Vector3(view.x * 100f, transform.position.y, view.y * 100f);
+        }
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (!Physics.Raycast(ray, out RaycastHit hit, 1000f, LayerMask.GetMask("Background")))
+        {
+            //Debug.LogWarning("The raycast did not hit anything! It should have hit the background.");          
+            return;
+        }
+        else
+        {
+            transform.position = hit.point;
+        }
 
         CheckOverlap();
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            if (tower && GameManager.Instance.MoneySystem.MoneyAmount >= (int)info.BuildCost && !overlapping)
+            if (tower && GameManager.Instance.MoneySystem.MoneyAmount >= (int)info.BuildCost && !isOverlapping)
             {
                 if (IsOverUI())
                 {
@@ -118,17 +138,21 @@ public class Placer : MonoBehaviour
 
     private void CheckOverlap()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.5f, layerToCheck);
-        if (colliders.Length > 0)
-        {
-            overlapping = true;
-        }
-        else
-        {
-            overlapping = false;
-        }
+        // First use an overlap sphere to check if the tower ghost is overlapping any paths.
+        // I am using the ghost tower's collider radius reduced by a bit here to make the path collision a little more forgiving so you can place towers
+        // in tighter spaces like between to veins (paths).
+        Collider[] colliders = Physics.OverlapSphere(transform.position, towerGhostCollider.radius * 0.6f, LayerMask.GetMask("Paths"));
+        bool overlappingPaths = colliders.Length > 0;
+        
+        // Now check if we are overlapping with any other towers.
+        // I am using the ghost tower's collider radius increased by a bit here to make it require a little space around the tires so they can't be crammed too close to each other.
+        Collider[] colliders2 = Physics.OverlapSphere(transform.position, towerGhostCollider.radius * 1.2f, LayerMask.GetMask("Tower"));
+        bool overlappingTowers = colliders2.Length > 0;
 
-        UpdateMats(overlapping);
+
+        isOverlapping = overlappingPaths || overlappingTowers;
+
+        UpdateMats(isOverlapping);
     }
 
     private void UpdateMats(bool overlap)

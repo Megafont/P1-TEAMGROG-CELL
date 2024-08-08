@@ -32,6 +32,8 @@ public class Tower_Base : MonoBehaviour
     private AudioSource _audioPlayer;
 
 
+    private LayerMask _LayerMask;
+
     protected Type _TargetEnemyType = typeof(Enemy_Base);
 
     protected Vector3 targetDirection;
@@ -53,7 +55,11 @@ public class Tower_Base : MonoBehaviour
     protected float _RefundAmount; // The amount of nutrients recovere when destroying the tower.
 
     
-    
+    private void Awake()
+    {
+        _LayerMask = LayerMask.NameToLayer("Paths") | LayerMask.NameToLayer("Towers");
+    }
+
     public virtual void Start()
     {
         //newModelAnimator = newModel.GetComponent<Animator>();
@@ -105,8 +111,8 @@ public class Tower_Base : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider collider)
-    {
-        if (collider.gameObject.layer == 6)
+    {        
+        if ((_LayerMask & collider.gameObject.layer) > 0)
         {
             OnNewTargetEnteredRange(collider.gameObject);
         }
@@ -114,7 +120,7 @@ public class Tower_Base : MonoBehaviour
 
     private void OnTriggerExit(Collider collider)
     {
-        if (collider.gameObject.layer == 6)
+        if ((_LayerMask & collider.gameObject.layer) > 0)
         {
             OnTargetWentOutOfRange(collider.gameObject);
 

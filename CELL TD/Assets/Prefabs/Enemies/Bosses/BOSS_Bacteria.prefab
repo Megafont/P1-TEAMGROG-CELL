@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.375
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.375
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.375
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64,14 +64,98 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5182725894481581615, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -5093909118727246655, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3007284815046147982, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
       propertyPath: m_Name
       value: BOSS_Bacteria
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 924337802920064943, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 925349216547596684, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191433175183933162, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757172591282776083, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757172591282776083, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140739397658218176, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6140739397658218176, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 882873ba374559547bf443ca671ec2b4, type: 2}
+    - target: {fileID: 6145808547922695158, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513957952396012364, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Name
+      value: BOSS_Bacteria_Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513957952396012364, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513957952396012364, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7795051686910880693, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790364033423574129, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 23f29fa97d6b33f488e4d7941db2af05, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -143,9 +227,9 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 2.5
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!114 &5970932811044760015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +299,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-8300301882664361714
 Rigidbody:

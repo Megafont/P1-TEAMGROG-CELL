@@ -5349,8 +5349,12 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.973
+      value: -1.954
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8273,8 +8277,12 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4068141433702982692, guid: b4d685f1bf1692c4281bb61aca3e038e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068141433702982692, guid: b4d685f1bf1692c4281bb61aca3e038e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.392
+      value: 0.353
       objectReference: {fileID: 0}
     - target: {fileID: 4068141433702982692, guid: b4d685f1bf1692c4281bb61aca3e038e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8918,9 +8926,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Background
       objectReference: {fileID: 0}
-    - target: {fileID: 8042972280787207674, guid: 15c06a36e2ccbc546afe6cd8264f9632, type: 3}
-      propertyPath: _DistanceFromCamera
-      value: 22
+    - target: {fileID: 6570087399616465957, guid: 15c06a36e2ccbc546afe6cd8264f9632, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

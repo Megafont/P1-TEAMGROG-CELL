@@ -48,14 +48,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5182725894481581615, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -5093909118727246655, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3007284815046147982, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
       propertyPath: m_Name
       value: Bacteria_rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 924337802920064943, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 925349216547596684, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191433175183933162, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6140739397658218176, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 99dafd0de3a172346866be2d930a1a51, type: 2}
+    - target: {fileID: 6145808547922695158, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513957952396012364, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7795051686910880693, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790364033423574129, guid: 702ff68e9076cee4389a33c5e8e81b06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

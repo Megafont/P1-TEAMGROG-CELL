@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 
@@ -48,6 +50,8 @@ public class TowerSelectorPanel : MonoBehaviour
     private TowerInfo_Base _PopupTowerInfo;
 
 
+    private Placer _CurrentPlacerObj;
+
 
     private void Awake()
     {
@@ -70,7 +74,17 @@ public class TowerSelectorPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Allow the user the cancel out of tower placement.
+        if (Mouse.current.rightButton.wasReleasedThisFrame)
+        {
+            _CurrentPlacerObj.gameObject.SetActive(false);
+            Destroy(_CurrentPlacerObj);
+            _CurrentPlacerObj = null;
+
+            EventSystem.current.SetSelectedGameObject(null);
+
+            return;
+        }
     }
 
     /// <summary>
@@ -122,6 +136,8 @@ public class TowerSelectorPanel : MonoBehaviour
             newPlacer = Instantiate(_placer);
             newPlacer.GetComponent<Placer>().tower = button.TowerPrefab;
             newPlacer.GetComponent<Placer>().info = button.TowerInfo;
+
+            _CurrentPlacerObj = newPlacer.GetComponent<Placer>();
         }
         else
         {

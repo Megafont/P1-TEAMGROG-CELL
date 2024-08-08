@@ -50,18 +50,27 @@ public class Neutrophil_ProjectileTower : Tower_Base
         if (targets.Count > 0 && targets[0])
         {
             _newModelAnimator.SetBool("isShooting", true);
+            // Wait a short time so the animation can start playing so it looks nicely synched up with the launch of the projectile.
+            yield return new WaitForSeconds(0.25f);
 
-            GameObject newProjectile = Instantiate(projectile, transform);
-            SimpleProjectile newInfo = newProjectile.GetComponent<SimpleProjectile>();
+            // We need to check this again here in case things changed since the previous if statement ran a quarter second ago.
+            if (targets.Count > 0 && targets[0] == null)
+            {
+                GameObject newProjectile = Instantiate(projectile, transform);
+                SimpleProjectile newInfo = newProjectile.GetComponent<SimpleProjectile>();
 
-            newInfo._damage = DamageValue;
-            newInfo._direction = Quaternion.LookRotation(targets[0].transform.position - transform.position, Vector3.up);
-            newInfo._size = 1.0f;
-            newInfo._speed = 35.0f;
-            newInfo._piercing = 1;
-            newInfo._owner = this;
+                newInfo._damage = DamageValue;
+                newInfo._direction = Quaternion.LookRotation(targets[0].transform.position - transform.position, Vector3.up);
+                newInfo._size = 1.0f;
+                newInfo._speed = 35.0f;
+                newInfo._piercing = 1;
+                newInfo._owner = this;
 
-            yield return new WaitForSeconds(FireRate);
+                targets.Remove(targets[0]);
+
+                yield return new WaitForSeconds(FireRate);
+            }
+
             _newModelAnimator.SetBool("isShooting", false);
         }
         else

@@ -11,7 +11,11 @@ using Random = UnityEngine.Random;
 /// <summary>
 /// This is the class for bosses that spawn enemies
 /// </summary>
-/// 
+/// <remarks>
+/// NOTE: The boss appears to float above the ground because I set the Base Offset setting on the NavMesh component to 2.5f.
+///       I tried just changing the position of the Armature and BOSS_Bacteria_Mesh child objects, but that didn't work.
+///       So if this ever needs to be adjusted, that is what's making him levitate.
+/// </remarks>
 public class BossSpawner_Base : Enemy_Base    
 {
     [Header("Reinforcements Settings")]

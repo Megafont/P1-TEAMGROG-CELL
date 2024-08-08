@@ -70,7 +70,6 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         InitInstance();
-        Debug.Log(Instance.gameObject);
 
         Enemy_Base.OnEnemyDied += OnEnemyDied;
         Enemy_Base.OnEnemyReachedGoal += OnEnemyReachedGoal;      

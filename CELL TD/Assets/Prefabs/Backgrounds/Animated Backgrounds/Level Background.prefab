@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4000319848394211097}
   - component: {fileID: 1658314901731116579}
   - component: {fileID: 6570087399616465957}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1698841770665427732}
   - component: {fileID: 8042972280787207674}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Level Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,6 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f72a8ceaba7c342965a1a6b87a922c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DistanceFromCamera: 10
+  _DistanceFromCamera: 22
   _ScaleAdjustment: 0.05
   _ScaleZInsteadOfY: 1
