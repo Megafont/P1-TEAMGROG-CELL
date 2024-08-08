@@ -49,6 +49,8 @@ public class Neutrophil_ProjectileTower : Tower_Base
     {
         if (targets.Count > 0 && targets[0])
         {
+            _newModelAnimator.SetBool("isShooting", true);
+
             GameObject newProjectile = Instantiate(projectile, transform);
             SimpleProjectile newInfo = newProjectile.GetComponent<SimpleProjectile>();
 
@@ -60,7 +62,14 @@ public class Neutrophil_ProjectileTower : Tower_Base
             newInfo._owner = this;
 
             yield return new WaitForSeconds(FireRate);
+            _newModelAnimator.SetBool("isShooting", false);
         }
+        else
+        {
+            _newModelAnimator.SetBool("isShooting", false);
+        }
+
+
         yield return new WaitForSeconds(0.1f);
         StartCoroutine("Shoot");
     }

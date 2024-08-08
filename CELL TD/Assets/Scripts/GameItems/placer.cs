@@ -7,8 +7,8 @@ public class Placer : MonoBehaviour
 {
     public GameObject tower;
     public TowerInfo_Base info;
+    public bool disableAnimations = true;
 
-    private Camera mainCamera;
 
     [SerializeField]
     private Material highlightMat;
@@ -19,33 +19,55 @@ public class Placer : MonoBehaviour
     [SerializeField]
     private LayerMask layerToCheck;
 
+    private Camera mainCamera;
     private bool overlapping = false;
 
     void Start()
-    {   
-        MeshFilter[] sourceMeshFilters = tower.GetComponentsInChildren<MeshFilter>();
-        
-        foreach (MeshFilter sourceMeshFilter in sourceMeshFilters)
+    {
+        /* NOTE:
+         *     We call SetActive(false) on the prefab, so that when we instantiate an instance, it will be disabled.
+         *     We just have to be careful to call SetActive(true) after Instantiate(), or else the next time the player
+         *     places this type of tower, it will not work, as it will be disabled.
+         * */
+        info.Prefab.SetActive(false);
+        GameObject newModel = Instantiate(info.Prefab, Vector3.zero, Quaternion.identity, transform);
+        info.Prefab.SetActive(true); // Re-enable the active state of the prefab. This is NOT the instance we just spawned in.
+
+
+        // Remove the tower component from the spawned prefab before we enable it.
+        Destroy(newModel.GetComponent<Tower_Base>());
+
+        // Enable the prefab so it can receive events and stick to the mouse.
+        newModel.SetActive(true);
+
+        // Set the size of the range bubble to the towers base range.
+        // NOTE: FindRecursive() is an extension method I defined in GameObjectUtils.cs. Unlike the normal Transform.find(), this one
+        //       is recursive so it can find an object with the specified name, even if it is a child of a child of the parent object.
+        GameObject rangeObj = newModel.transform.FindResursive("Range");
+        rangeObj.transform.localScale = new Vector3(info.BaseRange, info.BaseRange, info.BaseRange);
+
+        // Disable all colliders in the tower
+        // IMPORTANT: This step is REQUIRED, otherwise you can't place the tower because the tower ghost will detect itself when it does Physics.SphereCast(),
+        // which causes it to think you can't place the tower there.
+        Collider[] colliders = newModel.GetComponentsInChildren<Collider>();
+        foreach (Collider collider in colliders)
         {
-            GameObject newModel = new GameObject(sourceMeshFilter.gameObject.name);
-            newModel.transform.parent = transform;
-
-            newModel.AddComponent<MeshFilter>();
-            newModel.AddComponent<MeshRenderer>();
-
-            MeshFilter newMeshFilter = newModel.GetComponent<MeshFilter>();
-            MeshRenderer newMeshRenderer = newModel.GetComponent<MeshRenderer>();
-
-            newMeshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-
-            newMeshFilter.sharedMesh = sourceMeshFilter.sharedMesh;
-
-            newMeshFilter.transform.localScale = sourceMeshFilter.transform.localScale;
+            collider.enabled = false;
         }
+
+        // Disable animations if this option is on.
+        if (disableAnimations)
+        {
+            Animator[] animators = newModel.GetComponentsInChildren<Animator>();
+            foreach (Animator animator in animators)
+            {
+                animator.enabled = false;
+            }
+        }
+
 
         UpdateMats(true);
         
-
         overlapping = true;
     }
 
@@ -72,12 +94,12 @@ public class Placer : MonoBehaviour
                     return;
                 }
 
-                GameManager.Instance.MoneySystem.SubtractCurrency((int)info.BuildCost);
+                GameManager.Instance.MoneySystem.SubtractCurrency((int) info.BuildCost);
                 PlaceTower();
             }
             else if (!IsOverUI())
             {
-                GameManager.Instance.MoneySystem.SubtractCurrency(999999999);//This will show the player that they do not have enough money
+                GameManager.Instance.MoneySystem.SubtractCurrency(999999999); //This will show the player that they do not have enough money
             }
         }
     }

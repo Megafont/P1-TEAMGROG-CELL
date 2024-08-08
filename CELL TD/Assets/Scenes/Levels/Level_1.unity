@@ -20,19 +20,19 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_AmbientMode: 3
+  m_SubtractiveShadowColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
@@ -170,7 +170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 33531572}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 39265216}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,6 +281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -335,7 +339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 46479580}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Branch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,6 +397,10 @@ PrefabInstance:
     - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_Name
       value: Veins_Wave_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 741721432917129857, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_LocalPosition.x
@@ -453,7 +461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 62856192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 75043868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 90129598}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 134222026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Top Branch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,6 +663,10 @@ PrefabInstance:
     - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_Name
       value: Veins_Wave_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 741721432917129857, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_LocalPosition.x
@@ -718,6 +730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Wave_right
       objectReference: {fileID: 0}
+    - target: {fileID: 2390445912715510812, guid: bfbf385b66b6933418e765d0ab729129, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3055482653454180006, guid: bfbf385b66b6933418e765d0ab729129, type: 3}
       propertyPath: m_LocalScale.x
       value: 700
@@ -779,6 +795,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.106
@@ -833,7 +853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 157208613}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -867,6 +887,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -922,7 +946,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 189498627}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -954,7 +978,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 191661769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -998,6 +1022,10 @@ PrefabInstance:
     - target: {fileID: 6029484274916726571, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
       propertyPath: m_Name
       value: Veins_Corner_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029484274916726571, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6406045754225806737, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1053,7 +1081,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 230726235}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1136,7 +1164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 257562553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (END)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1268,6 +1296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.774
@@ -1370,6 +1402,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Corner_right
       objectReference: {fileID: 0}
+    - target: {fileID: 3045505834669638136, guid: 1689f7e1e12800348bc6ee52f9c867e4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1384,7 +1420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 330548198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1416,7 +1452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 334293829}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1548,6 +1584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.056
@@ -1604,6 +1644,10 @@ PrefabInstance:
     - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_Name
       value: Veins_Wave_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 741721432917129857, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_LocalScale.x
@@ -1663,7 +1707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424255640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1695,7 +1739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448476960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1729,6 +1773,10 @@ PrefabInstance:
     - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_Name
       value: Veins_Wave_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_IsActive
@@ -1798,7 +1846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 486379546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1876,7 +1924,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 507143404}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1972,7 +2020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594512932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2011,6 +2059,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalScale.x
@@ -2070,7 +2122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 629092189}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2103,6 +2155,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2209,7 +2265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 691582801}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2241,7 +2297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 704339709}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2292,7 +2348,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2375,6 +2431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2432,6 +2492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.109
@@ -2488,6 +2552,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalScale.x
@@ -2547,7 +2615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 750940156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2632,6 +2700,10 @@ PrefabInstance:
     - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_Name
       value: Veins_Wave_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 741721432917129857, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2780,6 +2852,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Fork_15
       objectReference: {fileID: 0}
+    - target: {fileID: 3302550036004896105, guid: 8d0e3a2c7f76b0745afc29d45df1dbf4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2794,7 +2870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 809108752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2828,6 +2904,10 @@ PrefabInstance:
     - target: {fileID: 3692707297405599390, guid: b4d685f1bf1692c4281bb61aca3e038e, type: 3}
       propertyPath: m_Name
       value: Veins_Small
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692707297405599390, guid: b4d685f1bf1692c4281bb61aca3e038e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4068141433702982692, guid: b4d685f1bf1692c4281bb61aca3e038e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2885,6 +2965,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3083,7 +3167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 909714849}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bottom Branch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3176,6 +3260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Corner_right
       objectReference: {fileID: 0}
+    - target: {fileID: 3045505834669638136, guid: 1689f7e1e12800348bc6ee52f9c867e4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3248,6 +3336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Corner_right
       objectReference: {fileID: 0}
+    - target: {fileID: 3045505834669638136, guid: 1689f7e1e12800348bc6ee52f9c867e4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3264,6 +3356,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3444,7 +3540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 987454741}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3476,7 +3572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1033689213}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3557,6 +3653,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalScale.x
       value: 530
@@ -3623,6 +3723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Wave_right
       objectReference: {fileID: 0}
+    - target: {fileID: 2390445912715510812, guid: bfbf385b66b6933418e765d0ab729129, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3055482653454180006, guid: bfbf385b66b6933418e765d0ab729129, type: 3}
       propertyPath: m_LocalScale.x
       value: 360
@@ -3683,6 +3787,10 @@ PrefabInstance:
     - target: {fileID: 2390445912715510812, guid: bfbf385b66b6933418e765d0ab729129, type: 3}
       propertyPath: m_Name
       value: Veins_Wave_right
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390445912715510812, guid: bfbf385b66b6933418e765d0ab729129, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3055482653454180006, guid: bfbf385b66b6933418e765d0ab729129, type: 3}
       propertyPath: m_LocalScale.x
@@ -4253,7 +4361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1193972765}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4368,7 +4476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1202043379}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4484,6 +4592,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5165,7 +5277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1292746144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5197,7 +5309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1312957987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5231,6 +5343,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5291,7 +5407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1342770381}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5374,7 +5490,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1358208751}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5411,7 +5527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1366457001}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5464,7 +5580,7 @@ Transform:
   m_GameObject: {fileID: 1385323976}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 9.17}
+  m_LocalPosition: {x: -3, y: 0, z: 9.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5525,6 +5641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Corner_right
       objectReference: {fileID: 0}
+    - target: {fileID: 3045505834669638136, guid: 1689f7e1e12800348bc6ee52f9c867e4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5544,7 +5664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1410964420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5578,6 +5698,10 @@ PrefabInstance:
     - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_Name
       value: Veins_Wave_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 741721432917129857, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5685,6 +5809,10 @@ PrefabInstance:
       value: Veins_Fork_15
       objectReference: {fileID: 0}
     - target: {fileID: 3302550036004896105, guid: 8d0e3a2c7f76b0745afc29d45df1dbf4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302550036004896105, guid: 8d0e3a2c7f76b0745afc29d45df1dbf4, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -5708,6 +5836,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5765,6 +5897,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5882,6 +6018,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5977,7 +6117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1494372062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6011,6 +6151,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_IsActive
@@ -6072,6 +6216,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6177,7 +6325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1543812647}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6209,7 +6357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1561749337}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6246,7 +6394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1594270883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6298,7 +6446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1636681201}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6423,6 +6571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Corner_right
       objectReference: {fileID: 0}
+    - target: {fileID: 3045505834669638136, guid: 1689f7e1e12800348bc6ee52f9c867e4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6449,6 +6601,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalScale.x
@@ -6508,7 +6664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1719828701}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6540,7 +6696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1734607301}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6572,7 +6728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1738188386}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6718,6 +6874,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Corner_left
       objectReference: {fileID: 0}
+    - target: {fileID: 6029484274916726571, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6406045754225806737, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.026
@@ -6822,6 +6982,10 @@ PrefabInstance:
       value: Veins_Corner_left
       objectReference: {fileID: 0}
     - target: {fileID: 6029484274916726571, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029484274916726571, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -6882,6 +7046,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6936,7 +7104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1782292332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6970,6 +7138,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7025,7 +7197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1794932476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Paths
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7061,6 +7233,10 @@ PrefabInstance:
     - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_Name
       value: Veins_Wave_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 72285305585131579, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 741721432917129857, guid: 48d86b7da3a54d347b41cbf1de52e869, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7213,7 +7389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1844492652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (START)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7291,7 +7467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1851979647}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7325,6 +7501,10 @@ PrefabInstance:
     - target: {fileID: 2390445912715510812, guid: bfbf385b66b6933418e765d0ab729129, type: 3}
       propertyPath: m_Name
       value: Veins_Wave_right
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390445912715510812, guid: bfbf385b66b6933418e765d0ab729129, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3055482653454180006, guid: bfbf385b66b6933418e765d0ab729129, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7380,7 +7560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1863734813}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (START)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7412,7 +7592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1863762689}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7446,6 +7626,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7501,7 +7685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1882945428}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7540,6 +7724,10 @@ PrefabInstance:
     - target: {fileID: 6029484274916726571, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
       propertyPath: m_Name
       value: Veins_Corner_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029484274916726571, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6406045754225806737, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7647,6 +7835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Corner_right
       objectReference: {fileID: 0}
+    - target: {fileID: 3045505834669638136, guid: 1689f7e1e12800348bc6ee52f9c867e4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7661,7 +7853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1941057737}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7700,6 +7892,10 @@ PrefabInstance:
     - target: {fileID: 6029484274916726571, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
       propertyPath: m_Name
       value: Veins_Corner_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029484274916726571, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6406045754225806737, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7755,7 +7951,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1975414630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7791,7 +7987,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985681663}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7828,7 +8024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1986607297}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7906,7 +8102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2006983146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (START)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7940,6 +8136,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8033,7 +8233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2016684103}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8067,6 +8267,10 @@ PrefabInstance:
     - target: {fileID: 3692707297405599390, guid: b4d685f1bf1692c4281bb61aca3e038e, type: 3}
       propertyPath: m_Name
       value: Veins_Small
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692707297405599390, guid: b4d685f1bf1692c4281bb61aca3e038e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4068141433702982692, guid: b4d685f1bf1692c4281bb61aca3e038e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8122,7 +8326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2031779160}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8331,7 +8535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2078670614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8365,6 +8569,10 @@ PrefabInstance:
     - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_Name
       value: Veins_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8423,6 +8631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veins_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1678668862540383430, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2017617869256973948, guid: c8f5de5fc6d3f3d429586a1dd91756ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8477,7 +8689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2099671628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8565,7 +8777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2122012632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Path_Straight_Horz (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8604,6 +8816,10 @@ PrefabInstance:
     - target: {fileID: 6029484274916726571, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
       propertyPath: m_Name
       value: Veins_Corner_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029484274916726571, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6406045754225806737, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8650,67 +8866,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 790481294b19cbb4d941f75c8fdc5c5c, type: 3}
---- !u!1001 &672438270104716016
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2811877021663671673, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -39.82022
-      objectReference: {fileID: 0}
-    - target: {fileID: 2811877021663671673, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2811877021663671673, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -11.673155
-      objectReference: {fileID: 0}
-    - target: {fileID: 2811877021663671673, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: 2811877021663671673, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071069
-      objectReference: {fileID: 0}
-    - target: {fileID: 2811877021663671673, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2811877021663671673, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2811877021663671673, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2811877021663671673, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2811877021663671673, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3192519887602380739, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
-      propertyPath: m_Name
-      value: Virus_A
-      objectReference: {fileID: 0}
-    - target: {fileID: 3192519887602380739, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8c1276eb8b2e72e49b0bedcb0a3fc0c2, type: 3}
 --- !u!1001 &1087418106240579519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8772,67 +8927,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c06a36e2ccbc546afe6cd8264f9632, type: 3}
---- !u!1001 &1105701311628795793
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5980931130654573705, guid: b9969680b00f1224da5391b103607a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -26.006073
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980931130654573705, guid: b9969680b00f1224da5391b103607a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.00000047683716
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980931130654573705, guid: b9969680b00f1224da5391b103607a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10.673938
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980931130654573705, guid: b9969680b00f1224da5391b103607a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980931130654573705, guid: b9969680b00f1224da5391b103607a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980931130654573705, guid: b9969680b00f1224da5391b103607a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980931130654573705, guid: b9969680b00f1224da5391b103607a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980931130654573705, guid: b9969680b00f1224da5391b103607a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980931130654573705, guid: b9969680b00f1224da5391b103607a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980931130654573705, guid: b9969680b00f1224da5391b103607a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362277306325376563, guid: b9969680b00f1224da5391b103607a25, type: 3}
-      propertyPath: m_Name
-      value: Bacteria_rig
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362277306325376563, guid: b9969680b00f1224da5391b103607a25, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b9969680b00f1224da5391b103607a25, type: 3}
 --- !u!1001 &1431087844914014550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11078,6 +11172,4 @@ SceneRoots:
   - {fileID: 2051124028}
   - {fileID: 1794932476}
   - {fileID: 1275818738}
-  - {fileID: 672438270104716016}
-  - {fileID: 1105701311628795793}
   - {fileID: 1087418106240579519}

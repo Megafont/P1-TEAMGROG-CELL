@@ -17,6 +17,7 @@ MonoBehaviour:
   TowerType: 2
   DisplayIcon: {fileID: 21300000, guid: ba0c65a50334c584fbe487b38c74b24a, type: 3}
   Prefab: {fileID: 1264391977160027311, guid: 50c1de58cb232704a9cd9393d343a6b8, type: 3}
+  UIPrefab: {fileID: 4827469671499204004, guid: 9e73f2956ea7e5f44923b62f1da7954d, type: 3}
   TargetingType: 1
   TargetedEnemyTypes: 
   BuildCost: 125
@@ -24,7 +25,7 @@ MonoBehaviour:
   BaseMaxHealth: 100
   BaseDamageValue: 5
   BaseFireRate: 1
-  BaseRange: 3
+  BaseRange: 8
   BaseNumberOfTargets: 1
   LevelUpDefinitions:
   - UpgradeCost: 100

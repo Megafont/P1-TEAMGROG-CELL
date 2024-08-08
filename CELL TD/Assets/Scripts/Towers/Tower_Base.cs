@@ -23,7 +23,7 @@ public class Tower_Base : MonoBehaviour
     protected GameObject newModel;//for the new imported model asset
 
     [SerializeField]
-    protected Animator newModelAnimator; // the animator for the new model
+    protected Animator _newModelAnimator; // the animator for the new model
 
     [SerializeField]
     private AudioClip _placementClip;
