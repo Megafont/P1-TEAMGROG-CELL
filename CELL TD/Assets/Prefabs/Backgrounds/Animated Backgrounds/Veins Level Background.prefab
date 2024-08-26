@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 1698841770665427732}
   - component: {fileID: 8042972280787207674}
   m_Layer: 10
-  m_Name: Level Background
+  m_Name: Veins Level Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

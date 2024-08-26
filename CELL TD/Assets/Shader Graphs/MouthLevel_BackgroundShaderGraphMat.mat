@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BackgroundShaderGraphMat
+  m_Name: MouthLevel_BackgroundShaderGraphMat
   m_Shader: {fileID: -6465566751694194690, guid: e04d8171fefc6d349bfa021466858d98, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,11 +25,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseColor:
-        m_Texture: {fileID: 2800000, guid: 5334b8c3193525c4fb3215ebccf37cca, type: 3}
+        m_Texture: {fileID: 2800000, guid: eb3d8228c195ba64fbe418ed1937e9b3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseDisplacement:
-        m_Texture: {fileID: 2800000, guid: 6f822130cf55129479abb60b02b8b4ca, type: 3}
+        m_Texture: {fileID: 2800000, guid: f22a14b1953c2c94ab0e6899f729bfa4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -65,7 +65,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: 7f5069c5dc7073a45a6fa84a0c3117ac, type: 3}
+        m_Texture: {fileID: 2800000, guid: d3c7edd084f49c8449a097ef813b8181, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -73,7 +73,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionroughnessMetallic:
-        m_Texture: {fileID: 2800000, guid: 3b07621ecbfe4b443aa523a48aba2a98, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2b810415f7a58b94dad6cc0e6bbe17b3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:

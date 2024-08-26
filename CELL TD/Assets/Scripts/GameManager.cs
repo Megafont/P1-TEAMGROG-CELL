@@ -258,6 +258,13 @@ public class GameManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name.StartsWith("Level_"))
         {
+            // This code is needed so the game won't crash if you start testing in a level scene.
+            // It simply tells the game manager which level's scene we're in.
+            CurrentLevelName = SceneManager.GetActiveScene().name;
+            // This line is simply removing the "Level_" prefix from the beginning of the level scene's name.
+            CurrentLevelName = CurrentLevelName.Substring(6, CurrentLevelName.Length - 6);
+
+            // Now set the game state.
             SetGameState(typeof(GameState_InGame));
             return;
         }
@@ -292,7 +299,7 @@ public class GameManager : MonoBehaviour
     public bool IsInitialized { get; private set; }
 
     public AudioMixerGroup MasterAudioMixer { get { return _MasterAudioMixerGroup; } }
-    public int CurrentLevelNumber { get; set; } = 1;
+    public string CurrentLevelName { get; set; }
     public HealthSystem HealthSystem { get; private set; }
     public MoneySystem MoneySystem { get; private set; }
 

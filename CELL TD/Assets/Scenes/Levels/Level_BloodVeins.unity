@@ -6846,7 +6846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283db4f37168a81418961aa8ce456ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _WavesList: {fileID: 11400000, guid: ea5ff9cf0075f7f4582c4d190e601cc0, type: 2}
+  _WavesList: {fileID: 11400000, guid: 53fd6fa9a740fa442b96f284cc3cfb23, type: 2}
   _EnemySpawners:
   - {fileID: 42734536}
   - {fileID: 561441746}
