@@ -46,8 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower: {fileID: 0}
   info: {fileID: 0}
-  highlightMat: {fileID: 2100000, guid: 38dce4761e1d7c14cb5ad60f91af384b, type: 2}
-  badMat: {fileID: 2100000, guid: cc15eff887c24d84587575a9db7db042, type: 2}
-  layerToCheck:
-    serializedVersion: 2
-    m_Bits: 264
+  disableAnimations: 1
+  highlightMat: {fileID: 2100000, guid: c94d0bfa85887bc438c5100ce6e7419e, type: 2}
+  badMat: {fileID: 2100000, guid: 37986b1258eec78498b829b79c4d42d8, type: 2}
