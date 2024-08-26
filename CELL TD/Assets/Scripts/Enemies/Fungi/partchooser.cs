@@ -17,7 +17,7 @@ public class partchooser : MonoBehaviour
         }
 
         //Pick random
-        GameObject chosenItem = parts[Random.Range(0, parts.Count - 1)];
+        GameObject chosenItem = parts[Random.Range(0, parts.Count)];
 
         //Remove others
         foreach (GameObject part in parts)

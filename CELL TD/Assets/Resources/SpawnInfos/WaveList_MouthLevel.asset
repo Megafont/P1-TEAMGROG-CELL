@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4aa3dd2ca4b2f9c4d9c4448fc22f79b0, type: 3}
-  m_Name: WaveList_Level1
+  m_Name: WaveList_MouthLevel
   m_EditorClassIdentifier: 
   Waves:
   - WaveReward: 50
     EnemySpawnerInfos:
+    - StartDelay: 0
+      EnemySpawnGroups: []
     - StartDelay: 0
       EnemySpawnGroups: []
     - StartDelay: 0
@@ -24,18 +26,27 @@ MonoBehaviour:
         TimeBetweenSpawns: 2.5
     - StartDelay: 0
       EnemySpawnGroups: []
+    - StartDelay: 0
+      EnemySpawnGroups: []
   - WaveReward: 150
     EnemySpawnerInfos:
     - StartDelay: 0
       EnemySpawnGroups: []
+    - StartDelay: 15
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 5
+        TimeBetweenSpawns: 2
     - StartDelay: 0
       EnemySpawnGroups:
       - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
-        NumberToSpawn: 10
+        NumberToSpawn: 5
+        TimeBetweenSpawns: 2.5
+    - StartDelay: 15
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 5
         TimeBetweenSpawns: 2
-      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
-        NumberToSpawn: 10
-        TimeBetweenSpawns: 1.5
     - StartDelay: 0
       EnemySpawnGroups: []
   - WaveReward: 200
@@ -44,7 +55,23 @@ MonoBehaviour:
       EnemySpawnGroups: []
     - StartDelay: 0
       EnemySpawnGroups:
-      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
+      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
+        NumberToSpawn: 5
+        TimeBetweenSpawns: 2
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 5
+        TimeBetweenSpawns: 2
+    - StartDelay: 40
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
+        NumberToSpawn: 15
+        TimeBetweenSpawns: 2.5
+    - StartDelay: 20
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
+        NumberToSpawn: 5
+        TimeBetweenSpawns: 2
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
         NumberToSpawn: 5
         TimeBetweenSpawns: 2
     - StartDelay: 0
@@ -62,8 +89,21 @@ MonoBehaviour:
       - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
         NumberToSpawn: 5
         TimeBetweenSpawns: 2
+    - StartDelay: 30
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
+        NumberToSpawn: 5
+        TimeBetweenSpawns: 2.5
     - StartDelay: 0
-      EnemySpawnGroups: []
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 20
+        TimeBetweenSpawns: 2
+    - StartDelay: 60
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
+        NumberToSpawn: 5
+        TimeBetweenSpawns: 2.5
     - StartDelay: 0
       EnemySpawnGroups: []
   - WaveReward: 350
@@ -71,12 +111,22 @@ MonoBehaviour:
     - StartDelay: 0
       EnemySpawnGroups:
       - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 15
+        TimeBetweenSpawns: 2
+    - StartDelay: 0
+      EnemySpawnGroups: []
+    - StartDelay: 40
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
         NumberToSpawn: 10
-        TimeBetweenSpawns: 1
+        TimeBetweenSpawns: 2
     - StartDelay: 0
       EnemySpawnGroups: []
-    - StartDelay: 0
-      EnemySpawnGroups: []
+    - StartDelay: 15
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 30
+        TimeBetweenSpawns: 2
   - WaveReward: 450
     EnemySpawnerInfos:
     - StartDelay: 0
@@ -91,131 +141,157 @@ MonoBehaviour:
         NumberToSpawn: 5
         TimeBetweenSpawns: 1.5
     - StartDelay: 0
-      EnemySpawnGroups: []
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
+        NumberToSpawn: 10
+        TimeBetweenSpawns: 2
+    - StartDelay: 20
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 20
+        TimeBetweenSpawns: 2
+    - StartDelay: 0
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
+        NumberToSpawn: 10
+        TimeBetweenSpawns: 2
     - StartDelay: 0
       EnemySpawnGroups: []
   - WaveReward: 550
     EnemySpawnerInfos:
     - StartDelay: 0
-      EnemySpawnGroups: []
-    - StartDelay: 0
-      EnemySpawnGroups: []
-    - StartDelay: 0
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
+        NumberToSpawn: 15
+        TimeBetweenSpawns: 1.5
+    - StartDelay: 60
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 15
+        TimeBetweenSpawns: 1.5
+    - StartDelay: 90
       EnemySpawnGroups:
       - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
-        NumberToSpawn: 35
-        TimeBetweenSpawns: 0.5
-      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
-        NumberToSpawn: 8
-        TimeBetweenSpawns: 1
-      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
-        NumberToSpawn: 3
+        NumberToSpawn: 20
         TimeBetweenSpawns: 2
+      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
+        NumberToSpawn: 10
+        TimeBetweenSpawns: 1.5
       - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
         NumberToSpawn: 3
         TimeBetweenSpawns: 1
+    - StartDelay: 30
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 15
+        TimeBetweenSpawns: 1.5
+    - StartDelay: 10
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
+        NumberToSpawn: 10
+        TimeBetweenSpawns: 1.5
   - WaveReward: 700
     EnemySpawnerInfos:
     - StartDelay: 0
-      EnemySpawnGroups: []
-    - StartDelay: 0
-      EnemySpawnGroups: []
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
+        NumberToSpawn: 15
+        TimeBetweenSpawns: 2
+    - StartDelay: 60
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
+        NumberToSpawn: 15
+        TimeBetweenSpawns: 1.5
+    - StartDelay: 30
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 20
+        TimeBetweenSpawns: 1.5
+    - StartDelay: 60
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
+        NumberToSpawn: 15
+        TimeBetweenSpawns: 1.5
     - StartDelay: 0
       EnemySpawnGroups:
       - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
-        NumberToSpawn: 25
-        TimeBetweenSpawns: 0.7
-      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
-        NumberToSpawn: 14
-        TimeBetweenSpawns: 0.8
-      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
         NumberToSpawn: 15
-        TimeBetweenSpawns: 0.6
-      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
-        NumberToSpawn: 10
-        TimeBetweenSpawns: 1
+        TimeBetweenSpawns: 2
   - WaveReward: 800
     EnemySpawnerInfos:
-    - StartDelay: 15
-      EnemySpawnGroups:
-      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
-        NumberToSpawn: 6
-        TimeBetweenSpawns: 0.5
-      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
-        NumberToSpawn: 20
-        TimeBetweenSpawns: 0.5
-      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
-        NumberToSpawn: 10
-        TimeBetweenSpawns: 0.5
-      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
-        NumberToSpawn: 5
-        TimeBetweenSpawns: 1
-    - StartDelay: 8
-      EnemySpawnGroups:
-      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
-        NumberToSpawn: 8
-        TimeBetweenSpawns: 0.5
-      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
-        NumberToSpawn: 20
-        TimeBetweenSpawns: 0.5
-      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
-        NumberToSpawn: 10
-        TimeBetweenSpawns: 0.5
-      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
-        NumberToSpawn: 5
-        TimeBetweenSpawns: 1
     - StartDelay: 0
       EnemySpawnGroups:
-      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
-        NumberToSpawn: 6
-        TimeBetweenSpawns: 0.5
       - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
+        NumberToSpawn: 10
+        TimeBetweenSpawns: 1.5
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 10
+        TimeBetweenSpawns: 1
+    - StartDelay: 30
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
         NumberToSpawn: 20
         TimeBetweenSpawns: 0.5
       - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
         NumberToSpawn: 10
         TimeBetweenSpawns: 0.5
+    - StartDelay: 80
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
+        NumberToSpawn: 15
+        TimeBetweenSpawns: 0.5
       - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
-        NumberToSpawn: 5
+        NumberToSpawn: 15
+        TimeBetweenSpawns: 0.5
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 20
+        TimeBetweenSpawns: 0.5
+    - StartDelay: 50
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
+        NumberToSpawn: 20
+        TimeBetweenSpawns: 0.5
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 10
+        TimeBetweenSpawns: 0.5
+    - StartDelay: 0
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
+        NumberToSpawn: 10
+        TimeBetweenSpawns: 1.5
+      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 15
         TimeBetweenSpawns: 1
-      - EnemyInfo: {fileID: 0}
-        NumberToSpawn: 0
-        TimeBetweenSpawns: 0
   - WaveReward: 0
     EnemySpawnerInfos:
     - StartDelay: 0
       EnemySpawnGroups:
-      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
+      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
         NumberToSpawn: 15
         TimeBetweenSpawns: 0.5
-      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
-        NumberToSpawn: 5
-        TimeBetweenSpawns: 0.5
-      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
-        NumberToSpawn: 10
-        TimeBetweenSpawns: 1
-    - StartDelay: 20
+    - StartDelay: 60
       EnemySpawnGroups:
-      - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
-        NumberToSpawn: 15
-        TimeBetweenSpawns: 0.5
-      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
-        NumberToSpawn: 15
-        TimeBetweenSpawns: 0.5
-      - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
-        NumberToSpawn: 15
-        TimeBetweenSpawns: 1
       - EnemyInfo: {fileID: 11400000, guid: 8a9f3b71638dc434fa1011806a4e7d7a, type: 2}
         NumberToSpawn: 1
-        TimeBetweenSpawns: 1
-    - StartDelay: 10
+        TimeBetweenSpawns: 0.5
+    - StartDelay: 30
       EnemySpawnGroups:
       - EnemyInfo: {fileID: 11400000, guid: 058d64c3df161ea43a002ed3f6b3e3fd, type: 2}
         NumberToSpawn: 20
         TimeBetweenSpawns: 0.5
       - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
-        NumberToSpawn: 15
+        NumberToSpawn: 20
         TimeBetweenSpawns: 0.5
       - EnemyInfo: {fileID: 11400000, guid: c688d313afdca964192b5fa4eb4f6efe, type: 2}
+        NumberToSpawn: 30
+        TimeBetweenSpawns: 0.5
+    - StartDelay: 120
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 8a9f3b71638dc434fa1011806a4e7d7a, type: 2}
+        NumberToSpawn: 1
+        TimeBetweenSpawns: 0.5
+    - StartDelay: 0
+      EnemySpawnGroups:
+      - EnemyInfo: {fileID: 11400000, guid: 0cfc0b2a4509aec428609255637a5e20, type: 2}
         NumberToSpawn: 15
-        TimeBetweenSpawns: 1
+        TimeBetweenSpawns: 0.5
