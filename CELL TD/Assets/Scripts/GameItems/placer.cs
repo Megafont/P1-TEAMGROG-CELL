@@ -99,7 +99,7 @@ public class Placer : MonoBehaviour
         }
         else
         {
-            transform.position = hit.point;
+            transform.position = new Vector3(hit.point.x, 0f, hit.point.z);
         }
 
         CheckOverlap();
