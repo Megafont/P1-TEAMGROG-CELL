@@ -20,12 +20,12 @@ MonoBehaviour:
   UIPrefab: {fileID: 0}
   TargetingType: 2
   TargetedEnemyTypes: 
-  BuildCost: 350
+  BuildCost: 250
   BaseRefundPercentage: 0.85
   BaseMaxHealth: 100
   BaseDamageValue: 1
   BaseFireRate: 1
-  BaseRange: 10
+  BaseRange: 20
   BaseNumberOfTargets: 1
   LevelUpDefinitions:
   - UpgradeCost: 150
