@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: TowerInfo_Lymphocyte_SlowingAOETower
   m_EditorClassIdentifier: 
   DisplayName: Lymphocyte (Slowing AOE Tower)
-  Description: Slows down enemies within the range of the tower. This is a bunch
-    of test text to test the UI in this test scenario in a test scene in your dreams.
+  Description: Slows down enemies within the range of the tower.
   TowerType: 0
   DisplayIcon: {fileID: 21300000, guid: 6bec65e9aa145594e8ed37ef796ae34f, type: 3}
   Prefab: {fileID: 8034803357733610008, guid: 6e169a01941365b4aae7055c63ac17cc, type: 3}
