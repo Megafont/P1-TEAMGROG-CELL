@@ -19,6 +19,7 @@ MonoBehaviour:
   Prefab: {fileID: 5423161611289648773, guid: 01793a8bdc76baa4fbe4cf1006d1b2ed, type: 3}
   AttackDamage: 5
   AttackSpeed: 1
+  AttackRange: 1.5
   MovementSpeed: 3
   MaxHealth: 20
   RewardAmount: 20

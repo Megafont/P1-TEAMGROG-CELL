@@ -49,9 +49,10 @@ public class Placer : MonoBehaviour
 
         // Set the size of the range bubble to the towers base range.
         // NOTE: FindRecursive() is an extension method I defined in GameObjectUtils.cs. Unlike the normal Transform.find(), this one
-        //       is recursive so it can find an object with the specified name, even if it is a child of a child of the parent object.
+        //       is recursive so it can find an object with the specified name, even if it is a child of a child of the parent object.        
+        float scale = info.BaseRange * 2f;
         GameObject rangeObj = towerGhost.transform.FindResursive("Range");
-        rangeObj.transform.localScale = new Vector3(info.BaseRange, info.BaseRange, info.BaseRange);
+        rangeObj.transform.localScale = new Vector3(scale, scale, scale);
 
         // Disable all colliders in the tower
         // IMPORTANT: This step is REQUIRED, otherwise you can't place the tower because the tower ghost will detect itself when it does Physics.SphereCast(),

@@ -40,6 +40,7 @@ public class Enemy_Base : MonoBehaviour, IEnemy
 
     protected float _AttackDamage;
     protected float _AttackSpeed;
+    protected float _AttackRange;
     protected float _MovementSpeed;
     protected float _RewardAmount;
     protected float _WayPointArrivedDistance;
@@ -129,6 +130,7 @@ public class Enemy_Base : MonoBehaviour, IEnemy
     {
         _AttackDamage = _EnemyInfo.AttackDamage;
         _AttackSpeed = _EnemyInfo.AttackSpeed;
+        _AttackRange = _EnemyInfo.AttackRange;
         _MovementSpeed = _EnemyInfo.MovementSpeed;
         _Health = _EnemyInfo.MaxHealth;
         _RewardAmount = _EnemyInfo.RewardAmount;
@@ -371,7 +373,6 @@ public class Enemy_Base : MonoBehaviour, IEnemy
     public void SetAsTarget(SpawnedUnit unit)
     {
         _isATarget = true;
-        stoppingEntities.Add(unit.gameObject);
         _TargetUnit = unit;
         StartCoroutine(Attack());
     }
@@ -390,7 +391,11 @@ public class Enemy_Base : MonoBehaviour, IEnemy
 
     IEnumerator Attack()
     {
-        _TargetUnit.ApplyDamage(AttackDamage);
+        if (Vector3.Distance(transform.position, _TargetUnit.transform.position) <= _AttackRange)
+        {
+            _TargetUnit.ApplyDamage(AttackDamage);
+        }
+
         yield return new WaitForSeconds(_AttackSpeed);
         if (_TargetUnit != null)
         {

@@ -57,18 +57,18 @@ public class SpawnedUnit : MonoBehaviour
 
     void Update()
     {
-
         //If the unit has a target that is not in the list, the unit does not have a target
         if (target != null && !tower.targets.Contains(target.gameObject))
         {
             RemoveTarget();
-
         }
+
         //If there are enemies in range and the unit does not have a target, find a target
         if (tower.targets.Count > 0 && target == null)
         {
             FindClosestAvailableEnemy();
         }
+
         if (target != null && tower.targets.Contains(target.gameObject))
         {
             _NavMeshAgent.SetDestination(target.transform.position);
@@ -80,22 +80,25 @@ public class SpawnedUnit : MonoBehaviour
     {
         GameObject closestEnemy = null;
         float smallestDist = 2000000;
-        foreach (GameObject enemy in tower.targets)
+
+		foreach (GameObject enemy in tower.targets)
         {
-            if (enemy != null) //If the cat exists
+            if (enemy != null) //If the enemy exists
             {
-                if (EnemyDistance(enemy) < smallestDist &&                 //If it is closer to the person than the previous smallest distance
-                    !(enemy.GetComponent<Enemy_Base>().IsATarget) &&       //If the enemy is not a target of another person
-                    tower.targets.Contains(enemy))                         //If the enemy is in range of the tower  
+                if (tower.targets.Contains(enemy) &&
+                    tower.IsInRange(enemy) &&                              //If the enemy is in range of the tower
+                    EnemyDistance(enemy) < smallestDist &&                 //If it is closer to the tower than the previous smallest distance
+                    !(enemy.GetComponent<Enemy_Base>().IsATarget))         //If the enemy is not a target of another tower                                             
                 {
                     smallestDist = EnemyDistance(enemy);
                     closestEnemy = enemy;
                 }
             }
 
-        }
-        if (closestEnemy != null) { 
-            target = closestEnemy.GetComponent<Enemy_Base>(); //Sets the target to the closest enemy
+        } // end foreach
+
+        if (closestEnemy != null) {
+			target = closestEnemy.GetComponent<Enemy_Base>(); //Sets the target to the closest enemy
             //StatusEffectsManager effectsMgr = target.GetComponent<StatusEffectsManager>();
             //if (effectsMgr != null)
             //{
@@ -107,15 +110,13 @@ public class SpawnedUnit : MonoBehaviour
             StartCoroutine(Attack());
         }
     }
-    //Finds the distance between the person and the cat
+
     private float EnemyDistance(GameObject enemy)
     {
-        float distance = 0f;
-        float xDist = Mathf.Pow(transform.position.x - enemy.transform.position.x, 2);
-        float yDist = Mathf.Pow(transform.position.x - enemy.transform.position.x, 2);
-        distance = Mathf.Sqrt(xDist + yDist);
+        float distance = Vector3.Distance(transform.position, enemy.transform.position);
         return distance;
     }
+
     protected void GetNextWaypoint()
     {
         int count = _NextWayPoint.NextWayPoints.Count;
@@ -193,20 +194,26 @@ public class SpawnedUnit : MonoBehaviour
         if(target == null)
         {
             RemoveTarget();
-        } else
+        } 
+        else
         {
-            target.ApplyDamage(_AttackDamage, tower);
-            StatusEffectsManager effectsMgr = target.GetComponent<StatusEffectsManager>();
-            if (effectsMgr != null)
+            // If the enemy is too far away, simply restart this coroutine and exit its current instance.
+            if (EnemyDistance(target.gameObject) <= unitInfo.AttackRange)
             {
-                //effectsMgr.ApplyStatusEffect(new StatusEffect_Stopped(unitInfo.StatusEffect, target));
+                target.stoppingEntities.Add(this.gameObject);
+                target.ApplyDamage(_AttackDamage, tower);
+                StatusEffectsManager effectsMgr = target.GetComponent<StatusEffectsManager>();
+                if (effectsMgr != null)
+                {
+                    //effectsMgr.ApplyStatusEffect(new StatusEffect_Stopped(unitInfo.StatusEffect, target));
+                }
             }
-            _Health -= target.AttackDamage;
-            yield return new WaitForSeconds(_AttackSpeed);
-            StartCoroutine(Attack());
         }
-        
-    }
+
+
+		yield return new WaitForSeconds(_AttackSpeed);
+		StartCoroutine(Attack());
+	}
 
 
 }
