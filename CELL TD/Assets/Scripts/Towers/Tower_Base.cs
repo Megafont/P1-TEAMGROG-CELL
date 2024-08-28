@@ -12,7 +12,7 @@ public class Tower_Base : MonoBehaviour
 {
     [Tooltip("This tower's stats information")]
     [SerializeField] protected TowerInfo_Base _TowerInfo;
-    
+
     [SerializeField]
     protected SphereCollider range;
 
@@ -54,7 +54,9 @@ public class Tower_Base : MonoBehaviour
     protected float _RefundPercentage; // The percentage of the build cost that is recovered when you destroy the tower.
     protected float _RefundAmount; // The amount of nutrients recovere when destroying the tower.
 
-    
+
+
+
     private void Awake()
     {
         _LayerMask = LayerMask.NameToLayer("Paths") | LayerMask.NameToLayer("Towers");
@@ -73,7 +75,7 @@ public class Tower_Base : MonoBehaviour
 
     public virtual void Update()
     {
-        //Remove duds
+        // Remove the first target if it is null.
         if (targets.Count > 0)
         {
             if (!targets[0].gameObject)
@@ -85,13 +87,8 @@ public class Tower_Base : MonoBehaviour
 
     private void OnEnable()
     {
-        // This corrects the problem with our prefabs. For example, the laser tower
-        // has a scale of 500. It's collider has a radius of 6. This effectively means
-        // the true size of the collider is radius = 30,000. This adjusts the collider
-        // radius by simply dividing it by the gameObject's scale. It doesn't matter
-        // whether we use x, y, or z here since it is a sphere.
-        _Collider = GetComponent<SphereCollider>();
-        _Collider.radius = _Collider.radius / transform.localScale.x;
+        UpdateRangeCollider();
+
         if (_stateMachine == null)
         {
             _stateMachine = GetComponent<StateMachine>();
@@ -102,7 +99,7 @@ public class Tower_Base : MonoBehaviour
         }
 
 
-        EnableTargetDetection();        
+        EnableTargetDetection();
     }
 
     private void OnDisable()
@@ -111,7 +108,7 @@ public class Tower_Base : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider collider)
-    {        
+    {
         if ((_LayerMask & collider.gameObject.layer) > 0)
         {
             OnNewTargetEnteredRange(collider.gameObject);
@@ -136,11 +133,23 @@ public class Tower_Base : MonoBehaviour
         TowerUI.ShowTowerUI(this);
     }
 
-    /// <summary>
-    /// Initializes the stats for this tower.
-    /// Subclasses should override this function to init stats specific to that tower type.
-    /// </summary>
-    protected virtual void InitTowerStats()
+    private void UpdateRangeCollider()
+    {
+		// This corrects the problem with our prefabs. For example, the laser tower
+		// has a scale of 500. It's collider has a radius of 6. This effectively means
+		// the true size of the collider is radius = 30,000. This adjusts the collider
+		// radius by simply dividing it by the gameObject's scale. It doesn't matter
+		// whether we use x, y, or z here since it is a sphere.
+		_Collider = GetComponent<SphereCollider>();
+		_Collider.radius = _Range;
+		_Collider.radius = _Collider.radius / transform.localScale.x;
+	}
+
+	/// <summary>
+	/// Initializes the stats for this tower.
+	/// Subclasses should override this function to init stats specific to that tower type.
+	/// </summary>
+	protected virtual void InitTowerStats()
     {
         _Health = _TowerInfo.BaseMaxHealth;
         _MaxHealth = _TowerInfo.BaseMaxHealth;
@@ -153,6 +162,8 @@ public class Tower_Base : MonoBehaviour
         _RefundAmount = _TowerInfo.BuildCost * _RefundPercentage;
 
         _TowerLevel = 1;
+
+        UpdateRangeCollider();
     }
 
     /// <summary>
@@ -244,14 +255,14 @@ public class Tower_Base : MonoBehaviour
     {
         if (enabled)
         {
-            
+
 
         }
     }
 
     private void OnEnemyDied(object sender, EventArgs e)
     {
-        OnTargetHasDied((GameObject) sender);
+        OnTargetHasDied((GameObject)sender);
 
         targets.Remove(sender as GameObject);
     }
@@ -288,7 +299,7 @@ public class Tower_Base : MonoBehaviour
         _TowerLevel++;
 
         //Update Cost
-        if (_TowerLevel-1 < _TowerInfo.LevelUpDefinitions.Count)
+        if (_TowerLevel - 1 < _TowerInfo.LevelUpDefinitions.Count)
         {
             _NextUpgradeCost = _TowerInfo.LevelUpDefinitions[_TowerLevel - 1].UpgradeCost;
         }
@@ -310,7 +321,7 @@ public class Tower_Base : MonoBehaviour
                     _Health += statUpgradeDef.UpgradeAmount;
                     break;
                 case TowerStats.NumberOfTargets:
-                    _NumberOfTargets += (int) statUpgradeDef.UpgradeAmount;
+                    _NumberOfTargets += (int)statUpgradeDef.UpgradeAmount;
                     break;
                 case TowerStats.RefundPercentage:
                     _RefundPercentage += statUpgradeDef.UpgradeAmount;
@@ -320,11 +331,20 @@ public class Tower_Base : MonoBehaviour
                     // If we encountered a stat type that isn't common to all tower types, then simply do nothing.
                     // The subclass' version of this function will handle it after calling this base class method.
                     break;
-            }
 
+            } // end switch
+
+
+            // Update the range collider in case the tower's range was modified.
+            UpdateRangeCollider();
         }
     }
 
+    public bool IsInRange(GameObject target)
+    {
+        float distance = Vector3.Distance(transform.position, target.transform.position);
+        return distance <= _Range;
+    }
 
 
     public float BuildCost { get { return _TowerInfo.BuildCost; } }

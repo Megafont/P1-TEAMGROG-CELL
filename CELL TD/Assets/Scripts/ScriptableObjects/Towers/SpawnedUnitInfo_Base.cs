@@ -23,6 +23,8 @@ public class SpawnedUnitInfo_Base : ScriptableObject
     public float AttackDamage = 2f;
     [Min(0)]
     public float AttackSpeed = 1f;
+    [Min(0.1f)]
+    public float AttackRange = 1f;
     [Min(0)]
     public float BaseMovementSpeed = 1f;
     [Min(0)]

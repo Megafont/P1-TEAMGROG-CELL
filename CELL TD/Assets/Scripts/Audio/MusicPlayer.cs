@@ -1,11 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 
 public class MusicPlayer : MonoBehaviour
@@ -25,6 +23,13 @@ public class MusicPlayer : MonoBehaviour
     [Tooltip("This should be set to the Music group of the audio mixer.")]
     [SerializeField]
     private AudioMixerGroup _MusicMixerGroup;
+
+    [Tooltip("This is the default music settings scriptable object that will be used if one is not found for the currently loaded scene.")]
+    [SerializeField]
+    private SceneMusicSettings _DefaultMusicSettings;
+
+
+    private int _DefaultMusicSettingsIndex;
 
 
 
@@ -77,9 +82,18 @@ public class MusicPlayer : MonoBehaviour
         Instance = this;
 
 
+        if (_DefaultMusicSettings == null)
+        {
+            throw new Exception("The DefaultMusicSettings property of the MusicPlayer is null! This value is required. The MusicPlayer is a child of the GameManager object.");
+        }
+
+
         // Load in all of the SceneMusicSettings assets.
         _SceneMusicSettings = Resources.LoadAll<SceneMusicSettings>("").ToList();
             
+        // Find the default music settings scriptable object.
+        _DefaultMusicSettingsIndex = _SceneMusicSettings.IndexOf(_DefaultMusicSettings);
+
 
         InitMusicPlayer();
     }
@@ -361,32 +375,18 @@ public class MusicPlayer : MonoBehaviour
 
     private int FindMusicSettingsIndexForScene(string sceneName)
     {
-        if (sceneName.ToLower().StartsWith("level") && sceneName.ToLower() != "levelselector")
+    
+        // Find the SceneMusicSettings scriptable object for the loaded scene.
+        for (int i = 0; i < _SceneMusicSettings.Count; i++)
         {
-            // The loaded scene appears to be a level, so find the SceneMusicSettings object named "SceneMusicSettings_InGame".
-            // We can't just search by scene name, since we'd have to add all level scenes to the list in that settings object.
-            // Instead, it just lets you specifu one scene since most of the music settings assets will only be applied to one scene.
-            // In this one special case, we want to use this SceneMusicSettings asset for all scenes that are levels.
-            for (int i = 0; i < _SceneMusicSettings.Count; i++)
+            if (_SceneMusicSettings[i].SceneName == sceneName)
             {
-                if (_SceneMusicSettings[i].name == "SceneMusicSettings_InGame")
-                    return i;
-            }
-        }
-        else
-        {
-            // The loaded scene does not appear to be a level, so find the SceneMusicSettings object for the loaded scene.
-            for (int i = 0; i < _SceneMusicSettings.Count; i++)
-            {
-                if (_SceneMusicSettings[i].SceneName == sceneName)
-                {
-                    return i;
-                }
+                return i;
             }
         }
 
-        // We failed to find music settings for the requested scene, so return -1 to indicate an error.
-        return -1;
+        // We did not find a music settings scriptable object for the loaded scene, so use the default.
+        return _DefaultMusicSettingsIndex;
     }
 
     private void InitMusicPlayer()
