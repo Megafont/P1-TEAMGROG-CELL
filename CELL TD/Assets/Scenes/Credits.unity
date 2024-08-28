@@ -3665,7 +3665,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793681535420726956, guid: bd11e56ef25a6a641ae5b44eb9e18b9a, type: 3}
       propertyPath: m_text
-      value: 'lxodes
+      value: 'gutsngears
+
+        lxodes
 
         TheTraverser'
       objectReference: {fileID: 0}
