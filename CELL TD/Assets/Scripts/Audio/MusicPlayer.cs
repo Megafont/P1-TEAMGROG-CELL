@@ -346,12 +346,22 @@ public class MusicPlayer : MonoBehaviour
 
     private void AssignTracksToCurrentAudioSources()
     {
+        ClearCurrentAudioTracks();
+
         for (int i = 0; i < _SceneMusicSettings[_CurrentMusicSettingsIndex].MusicClips.Count; i++)
         {
             _CurrentMusicAudioSources[i].volume = 0;
             _CurrentMusicAudioSources[i].clip = _SceneMusicSettings[_CurrentMusicSettingsIndex].MusicClips[i];
             _CurrentMusicAudioSources[i].playOnAwake = false;
         }
+    }
+
+    private void ClearCurrentAudioTracks()
+    {
+        for (int i = 0; i < _CurrentMusicAudioSources.Count; i++)
+		{
+			_CurrentMusicAudioSources[i].clip = null;
+		}
     }
 
     private void SetMusicVolume(float volume, List<AudioSource> audioSources, bool ignoreTracksThatAreMuted = false)
