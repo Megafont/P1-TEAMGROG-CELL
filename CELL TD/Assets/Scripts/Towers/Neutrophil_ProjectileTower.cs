@@ -92,9 +92,8 @@ public class Neutrophil_ProjectileTower : Tower_Base
                 _audioPlayer.Play();
 
                 yield return new WaitForSeconds(FireRate);
-              }
-              _newModelAnimator.SetBool("isShooting", false);                
 
+                _newModelAnimator.SetBool("isShooting", false);                
             }
             else
             {
