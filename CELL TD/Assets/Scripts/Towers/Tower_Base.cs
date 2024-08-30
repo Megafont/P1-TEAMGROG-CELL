@@ -53,6 +53,7 @@ public class Tower_Base : MonoBehaviour
     protected float _NextUpgradeCost;
     protected float _RefundPercentage; // The percentage of the build cost that is recovered when you destroy the tower.
     protected float _RefundAmount; // The amount of nutrients recovere when destroying the tower.
+    protected GameObject currentTarget;
 
 
 
@@ -78,11 +79,35 @@ public class Tower_Base : MonoBehaviour
         // Remove the first target if it is null.
         if (targets.Count > 0)
         {
-            if (!targets[0].gameObject)
-            {
-                targets.Remove(targets[0]);
-            }
+            targets.RemoveAll(target => target == null);
         }
+        // Updates or attacks the current target
+        if (currentTarget == null || !targets.Contains(currentTarget))
+        {
+            SelectTarget();
+        }
+        // Only attacks the target if it is valid
+        if (currentTarget != null)
+        {
+            AttackTarget(currentTarget);
+        }
+    }
+
+    protected virtual void SelectTarget()
+    {
+        if (targets.Count > 0)
+        {
+            currentTarget = targets[0];  // Select the first target in the list
+        }
+        else
+        {
+            currentTarget = null;  // No targets available
+        }
+    }
+
+    protected virtual void AttackTarget(GameObject target)
+    {
+        // Implement attack logic here
     }
 
     private void OnEnable()

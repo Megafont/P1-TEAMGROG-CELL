@@ -49,15 +49,29 @@ public class Neutrophil_ProjectileTower : Tower_Base
         StartCoroutine("Shoot");
     }
 
+    protected override void AttackTarget(GameObject target)
+    {
+        // Checks if the target is still within range
+        if (target != null)
+        {
+            // Here you can add logic for the turret to rotate towards the target.
+            Vector3 direction = target.transform.position - transform.position;
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        }
+    }
+
+
     private IEnumerator Shoot()
     {
-        if (targets.Count > 0 && targets[0])
+        while(true)
         {
+            // Wait a short time so the animation can start playing so it looks nicely synched up with the launch of the projectile.
             _newModelAnimator.SetBool("isShooting", true);
             // Wait a short time so the animation can start playing so it looks nicely synched up with the launch of the projectile.
-            yield return new WaitForSeconds(0.25f);
-
-            // We need to check this again here in case things changed since the previous if statement ran a quarter second ago.
+            yield return new WaitForSeconds(0.25f);        
+            
+            
             if (targets.Count > 0 && targets[0])
             {
                 GameObject newProjectile = Instantiate(projectile, transform);
@@ -78,18 +92,16 @@ public class Neutrophil_ProjectileTower : Tower_Base
                 _audioPlayer.Play();
 
                 yield return new WaitForSeconds(FireRate);
+              }
+              _newModelAnimator.SetBool("isShooting", false);                
+
             }
-
-            _newModelAnimator.SetBool("isShooting", false);
+            else
+            {
+                _newModelAnimator.SetBool("isShooting", false);
+            }
+            yield return new WaitForSeconds(0.1f);
         }
-        else
-        {
-            _newModelAnimator.SetBool("isShooting", false);
-        }
-
-
-        yield return new WaitForSeconds(0.1f);
-        StartCoroutine("Shoot");
     }
 
 
