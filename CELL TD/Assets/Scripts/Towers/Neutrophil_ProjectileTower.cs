@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Neutrophil_ProjectileTower : Tower_Base
 {
+    [Tooltip("The sound this tower makes when it fires.")]
+	[SerializeField]
+    private AudioClip _FireSound;
+
 
     /// <summary>
     /// Applies a level up to this tower.
@@ -61,12 +65,17 @@ public class Neutrophil_ProjectileTower : Tower_Base
 
                 newInfo._damage = DamageValue;
                 newInfo._direction = Quaternion.LookRotation(targets[0].transform.position - transform.position, Vector3.up);
-                newInfo._size = 1.0f;
-                newInfo._speed = 35.0f;
-                newInfo._piercing = 1;
+                newInfo._size = TowerInfo.ProjectileSize;
+                newInfo._speed = TowerInfo.ProjectileSpeed;
+                newInfo._piercing = TowerInfo.ProjectilePierces;
                 newInfo._owner = this;
 
+                newProjectile.GetComponent<MeshRenderer>().material.color = TowerInfo.ProjectileColor;
+
                 targets.Remove(targets[0]);
+
+                _audioPlayer.clip = _FireSound;
+                _audioPlayer.Play();
 
                 yield return new WaitForSeconds(FireRate);
             }
@@ -82,4 +91,17 @@ public class Neutrophil_ProjectileTower : Tower_Base
         yield return new WaitForSeconds(0.1f);
         StartCoroutine("Shoot");
     }
+
+
+
+	/// <summary>
+	/// This property uses the new keyword to intentionally hide the base class version of this property.
+	/// </summary>
+	new public TowerInfo_Neutrophil_ProjectileTower TowerInfo
+	{
+		get
+		{
+			return (TowerInfo_Neutrophil_ProjectileTower)_TowerInfo;
+		}
+	}
 }

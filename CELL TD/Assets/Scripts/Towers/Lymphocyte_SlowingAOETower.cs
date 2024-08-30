@@ -6,12 +6,23 @@ using UnityEngine;
 
 public class Lymphocyte_SlowingAOETower : Tower_Base
 {
-    float _EnemySearchTimer;
+	[Tooltip("This is the GameObject that represents the \"shield\" VFX object that provides the visual effect of the slowing tower.")]
+	[SerializeField]
+	private GameObject _ShieldVFX;
+
+
+	float _EnemySearchTimer;
     private int effectStrength = 0;
 
     private bool isAttacking;
 
-    public override void Update()
+
+	private void Awake()
+	{
+        UpdateVfxScale();
+	}
+
+	public override void Update()
     {
         base.Update();
 
@@ -27,6 +38,11 @@ public class Lymphocyte_SlowingAOETower : Tower_Base
             // Reset the timer.
             _EnemySearchTimer = 0;
         }
+    }
+
+    private void UpdateVfxScale()
+    {
+        _ShieldVFX.transform.localScale = new Vector3(_Range, _Range, _Range);
     }
 
     /// <summary>
@@ -114,6 +130,9 @@ public class Lymphocyte_SlowingAOETower : Tower_Base
             } // end switch
 
         } // end foreach TowerStatUpgradeDefinition
+
+
+        UpdateVfxScale();
     }
 
 

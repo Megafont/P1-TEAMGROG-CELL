@@ -97,4 +97,15 @@ public class Macrophage_UnitSpawnerTower : Tower_Base
     }
 
 
+
+	/// <summary>
+	/// This property uses the new keyword to intentionally hide the base class version of this property.
+	/// </summary>
+	new public TowerInfo_Macrophage_UnitSpawnerTower TowerInfo
+	{
+		get
+		{
+			return (TowerInfo_Macrophage_UnitSpawnerTower)_TowerInfo;
+		}
+	}
 }
