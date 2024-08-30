@@ -1200,6 +1200,7 @@ MonoBehaviour:
   _placementClip: {fileID: 8300000, guid: e76faca42240de948b656106f9bb5693, type: 3}
   _audioPlayer: {fileID: 3168543229636747388}
   targets: []
+  _ShieldVFX: {fileID: 6446172170590947759}
 --- !u!114 &7126515385639366762
 MonoBehaviour:
   m_ObjectHideFlags: 0

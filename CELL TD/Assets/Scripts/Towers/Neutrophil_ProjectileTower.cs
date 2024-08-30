@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Neutrophil_ProjectileTower : Tower_Base
 {
+    [Tooltip("The sound this tower makes when it fires.")]
+	[SerializeField]
+    private AudioClip _FireSound;
+
 
     /// <summary>
     /// Applies a level up to this tower.
@@ -62,30 +66,35 @@ public class Neutrophil_ProjectileTower : Tower_Base
     {
         while(true)
         {
+            // Wait a short time so the animation can start playing so it looks nicely synched up with the launch of the projectile.
+            _newModelAnimator.SetBool("isShooting", true);
+            // Wait a short time so the animation can start playing so it looks nicely synched up with the launch of the projectile.
+            yield return new WaitForSeconds(0.25f);        
+            
+            
             if (targets.Count > 0 && targets[0])
             {
-                _newModelAnimator.SetBool("isShooting", true);
-                // Wait a short time so the animation can start playing so it looks nicely synched up with the launch of the projectile.
-                yield return new WaitForSeconds(0.25f);
+                GameObject newProjectile = Instantiate(projectile, transform);
+                SimpleProjectile newInfo = newProjectile.GetComponent<SimpleProjectile>();
 
-                // We need to check this again here in case things changed since the previous if statement ran a quarter second ago.
-                if (targets.Count > 0 && targets[0])
-                {
-                    GameObject newProjectile = Instantiate(projectile, transform);
-                    SimpleProjectile newInfo = newProjectile.GetComponent<SimpleProjectile>();
+                newInfo._damage = DamageValue;
+                newInfo._direction = Quaternion.LookRotation(targets[0].transform.position - transform.position, Vector3.up);
+                newInfo._size = TowerInfo.ProjectileSize;
+                newInfo._speed = TowerInfo.ProjectileSpeed;
+                newInfo._piercing = TowerInfo.ProjectilePierces;
+                newInfo._owner = this;
 
-                    newInfo._damage = DamageValue;
-                    newInfo._direction = Quaternion.LookRotation(targets[0].transform.position - transform.position, Vector3.up);
-                    newInfo._size = 1.0f;
-                    newInfo._speed = 35.0f;
-                    newInfo._piercing = 1;
-                    newInfo._owner = this;
+                newProjectile.GetComponent<MeshRenderer>().material.color = TowerInfo.ProjectileColor;
 
-                    //targets.Remove(targets[0]);
+                targets.Remove(targets[0]);
 
-                    yield return new WaitForSeconds(FireRate);
-                }
-                _newModelAnimator.SetBool("isShooting", false);
+                _audioPlayer.clip = _FireSound;
+                _audioPlayer.Play();
+
+                yield return new WaitForSeconds(FireRate);
+              }
+              _newModelAnimator.SetBool("isShooting", false);                
+
             }
             else
             {
@@ -94,4 +103,17 @@ public class Neutrophil_ProjectileTower : Tower_Base
             yield return new WaitForSeconds(0.1f);
         }
     }
+
+
+
+	/// <summary>
+	/// This property uses the new keyword to intentionally hide the base class version of this property.
+	/// </summary>
+	new public TowerInfo_Neutrophil_ProjectileTower TowerInfo
+	{
+		get
+		{
+			return (TowerInfo_Neutrophil_ProjectileTower)_TowerInfo;
+		}
+	}
 }

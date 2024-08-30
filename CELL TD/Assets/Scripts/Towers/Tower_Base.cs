@@ -26,13 +26,13 @@ public class Tower_Base : MonoBehaviour
     protected Animator _newModelAnimator; // the animator for the new model
 
     [SerializeField]
-    private AudioClip _placementClip;
+    protected AudioClip _placementClip;
 
     [SerializeField]
-    private AudioSource _audioPlayer;
+    protected AudioSource _audioPlayer;
 
 
-    private LayerMask _LayerMask;
+    protected LayerMask _LayerMask;
 
     protected Type _TargetEnemyType = typeof(Enemy_Base);
 

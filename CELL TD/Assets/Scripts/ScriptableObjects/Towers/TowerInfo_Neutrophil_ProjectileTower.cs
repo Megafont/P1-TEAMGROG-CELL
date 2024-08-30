@@ -16,9 +16,21 @@ public class TowerInfo_Neutrophil_ProjectileTower : TowerInfo_Base
     [Header("Neutrophil (Projectile Tower)-Specific Stats")]
 
     // A dummy setting. The header causes an error if there are no properties here.
-    [Tooltip("Dummy Stat")]
+    [Tooltip("The size of this tower's projectiles in Unity units (aka meters).")]
     [SerializeField]
-    public int DummyStat;
+    public float ProjectileSize = 1.0f;
+
+	[Tooltip("The color and transparency of this tower's projectiles.")]
+	[SerializeField]
+	public Color32 ProjectileColor = new Color32(255, 103, 0, 200);
+
+	[Tooltip("The movement speed of this tower's projectiles in Unity units (aka meters) per second.")]
+	[SerializeField]
+	public float ProjectileSpeed = 35.0f;
+
+	[Tooltip("The number of objects this tower's projectiles can pierce through before they disappear.")]
+	[SerializeField]
+	public float ProjectilePierces = 1f;
 
 }
 
