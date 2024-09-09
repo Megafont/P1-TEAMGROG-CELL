@@ -9,6 +9,10 @@ public class Lymphocyte_SlowingAOETower : Tower_Base
 	[Tooltip("This is the GameObject that represents the \"shield\" VFX object that provides the visual effect of the slowing tower.")]
 	[SerializeField]
 	private GameObject _ShieldVFX;
+    
+    [Tooltip("The sound this tower makes when it fires.")]
+	[SerializeField]
+    private AudioClip _FireSound;
 
 
 	float _EnemySearchTimer;
@@ -90,6 +94,10 @@ public class Lymphocyte_SlowingAOETower : Tower_Base
                     }
                 }
                 isAttacking = enemyCount > 0;
+
+                _audioPlayer.clip = _FireSound;
+                _audioPlayer.Play();
+                
                 _newModelAnimator.SetBool("isAttacking", isAttacking);
                 print("stop attacking " + isAttacking);
             }
