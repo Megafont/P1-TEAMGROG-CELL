@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a70b662ac5a2ad4dab4ed78219f1b6e, type: 3}
+  m_Name: TowerInfo_Sniper_Tower
+  m_EditorClassIdentifier: 
+  DisplayName: Sniper Tower
+  Description: A sniper tower
+  TowerType: 3
+  DisplayIcon: {fileID: 21300000, guid: ffdf80dc342e69344b2dccafe04c30ee, type: 3}
+  Prefab: {fileID: 1264391977160027311, guid: 8a957f99738e7af4596567601e875fb0, type: 3}
+  TargetingType: 1
+  TargetedEnemyTypes: 
+  BuildCost: 250
+  BaseRefundPercentage: 0.85
+  BaseMaxHealth: 100
+  BaseDamageValue: 10
+  BaseFireRate: 6
+  BaseRange: 12
+  BaseNumberOfTargets: 1
+  LevelUpDefinitions:
+  - UpgradeCost: 100
+    StatUpgradeDefinitions:
+    - TowerStat: 1
+      UpgradeAmount: 10
+  DummyStat: 0

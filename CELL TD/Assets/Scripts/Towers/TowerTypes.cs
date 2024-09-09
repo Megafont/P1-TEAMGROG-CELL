@@ -8,6 +8,7 @@ public enum TowerTypes
     Lymphocyte_SlowingAOETower,
     Macrophage_UnitSpawnerTower,
     Neutrophil_ProjectileTower,
+    Sniper_ProjectileTower,
 }
 
 public enum TargetingTypes
