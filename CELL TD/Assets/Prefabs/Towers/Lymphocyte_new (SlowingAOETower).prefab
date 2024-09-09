@@ -1201,6 +1201,7 @@ MonoBehaviour:
   _audioPlayer: {fileID: 3168543229636747388}
   targets: []
   _ShieldVFX: {fileID: 6446172170590947759}
+  _FireSound: {fileID: 8300000, guid: 709c0e37e5700ba499f3b7dbe24285c9, type: 3}
 --- !u!114 &7126515385639366762
 MonoBehaviour:
   m_ObjectHideFlags: 0
