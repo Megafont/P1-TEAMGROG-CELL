@@ -59,6 +59,7 @@ MonoBehaviour:
   _placementClip: {fileID: 8300000, guid: 41da53ed04259994985df14f8b2e06d6, type: 3}
   _audioPlayer: {fileID: 1446478729552685059}
   targets: []
+  _FireSound: {fileID: 8300000, guid: 2e8a504f778e4ca4f9b8300ba872b2d8, type: 3}
   projectile: {fileID: 1948298987761971111, guid: 53aa2ebe4f1540e4fbbdd8f0fe97473a, type: 3}
 --- !u!114 &1712660690714138527
 MonoBehaviour:

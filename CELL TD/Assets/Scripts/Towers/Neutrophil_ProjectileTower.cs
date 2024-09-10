@@ -86,8 +86,6 @@ public class Neutrophil_ProjectileTower : Tower_Base
 
                 newProjectile.GetComponent<MeshRenderer>().material.color = TowerInfo.ProjectileColor;
 
-                targets.Remove(targets[0]);
-
                 _audioPlayer.clip = _FireSound;
                 _audioPlayer.Play();
 
