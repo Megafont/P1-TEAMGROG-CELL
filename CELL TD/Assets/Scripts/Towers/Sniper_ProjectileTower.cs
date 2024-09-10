@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Sniper_ProjectileTower : Tower_Base
 {
+     [Tooltip("The sound this tower makes when it fires.")]
+	[SerializeField]
+    private AudioClip _FireSound;
 
     /// <summary>
     /// Applies a level up to this tower.
@@ -85,6 +88,8 @@ public class Sniper_ProjectileTower : Tower_Base
                     projectile._owner = this;
 
                     //targets.Remove(targets[0]);
+                    _audioPlayer.clip = _FireSound;
+                     _audioPlayer.Play();
 
                     yield return new WaitForSeconds(FireRate);
                 }
